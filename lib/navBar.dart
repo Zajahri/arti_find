@@ -12,6 +12,7 @@ class NavBar extends StatelessWidget {
     return SizedBox(
       width: 250,
         child: Drawer(
+          backgroundColor: Color(0xFFE9DBC7),
           child: ListView(
             children: [
               const UserAccountsDrawerHeader(

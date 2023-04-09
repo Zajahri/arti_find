@@ -7,12 +7,13 @@ class ThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFFE9DBC7),
         automaticallyImplyLeading: false,
-        leadingWidth: 100,
-        leading: ElevatedButton.icon(
+        leadingWidth: 65,
+        leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_left_sharp),
-          label: const Text('Back'),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
+
           style: ElevatedButton.styleFrom(
              elevation: 0,
              backgroundColor: Colors.transparent,
