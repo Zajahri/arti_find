@@ -19,9 +19,21 @@ class SecondPage extends StatelessWidget {
             ),
           ),
         ),
-      body: const Center(
-        child: Text('SecondPage')
+      body: Column(
+        children: [
+          const Text('1st Column'),
+          const Text('2nd Column'),
+          Row(
+            children: const [
+              Text('1st Row'),
+              Text('2nd Row'),
+            ]
+
+
+          )
+        ],
       )
+
     );
   }
 }
