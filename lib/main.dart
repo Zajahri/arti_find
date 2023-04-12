@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'dart:async';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:arti_find/pages/login_page.dart';
 
 void main(){
   runApp(const MyApp());
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Timer(const Duration(seconds: 5), () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (_) => const FirstScreen(),),
+            builder: (_) => const LoginPage(),),
         );
       });
     }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'pages/second_page.dart';
 import 'pages/third_page.dart';
 import 'pages/fourth_page.dart';
+import 'pages/login_page.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -64,6 +65,18 @@ class NavBar extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const FourthPage()
+                    ),
+                  );
+                },
+              ),
+
+              ListTile(
+                leading: const Icon(Icons.logout),
+                title: const Text('Log Out'),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SignIn()
                     ),
                   );
                 },
