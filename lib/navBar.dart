@@ -1,7 +1,9 @@
-import 'package:arti_find/pages/third_page.dart';
+import 'package:arti_find/pages/contact_us.dart';
+import 'package:arti_find/pages/settings.dart';
+import 'package:arti_find/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/second_page.dart';
-import 'pages/third_page.dart';
+import 'pages/contact_us.dart';
 import 'pages/fourth_page.dart';
 import 'pages/login_page.dart';
 
@@ -13,7 +15,7 @@ class NavBar extends StatelessWidget {
     return SizedBox(
       width: 250,
         child: Drawer(
-          backgroundColor: Color(0xFFE9DBC7),
+          backgroundColor: const Color(0xFFE9DBC7),
           child: ListView(
             children: [
               const UserAccountsDrawerHeader(
@@ -49,18 +51,18 @@ class NavBar extends StatelessWidget {
               ),
               ListTile(
                 leading: const Icon(Icons.contact_mail),
-                title: const Text('thirdPage'),
+                title: const Text('Contact Us'),
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ThirdPage()
+                    MaterialPageRoute(builder: (context) => ContactUs()
                     ),
                   );
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text('fourthPage'),
+                leading: const Icon(Icons.thumb_up),
+                title: const Text("Do's and Don'ts"),
                 onTap: (){
                   Navigator.push(
                     context,
@@ -69,14 +71,25 @@ class NavBar extends StatelessWidget {
                   );
                 },
               ),
-
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text("Settings"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Settings()
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 400,),
               ListTile(
                 leading: const Icon(Icons.logout),
                 title: const Text('Log Out'),
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SignIn()
+                    MaterialPageRoute(builder: (context) => const LoginPage()
                     ),
                   );
                 },
@@ -90,3 +103,6 @@ class NavBar extends StatelessWidget {
 
   }
 }
+
+
+

@@ -6,17 +6,16 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFFE9DBC7),
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leadingWidth: 100,
-          leading: ElevatedButton.icon(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: const Text("About",
+            style: TextStyle(color: Color(0xFF6F1D1B),fontFamily: 'Montserrat', fontWeight:FontWeight.w700),
+          ),
+          leading: IconButton(
             onPressed: () => Navigator.of(context).pop(),
-            icon: const Icon(Icons.arrow_left_sharp),
-            label: const Text('Back'),
-            style: ElevatedButton.styleFrom(
-              elevation: 0,
-              backgroundColor: Colors.transparent,
-            ),
+            icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
           ),
         ),
       body: Column(
@@ -28,7 +27,6 @@ class SecondPage extends StatelessWidget {
               Text('1st Row'),
               Text('2nd Row'),
             ]
-
 
           )
         ],

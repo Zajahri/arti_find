@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,10 +38,24 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   curved_labeled_navigation_bar: 2.0.2
   font_awesome_flutter: ^10.4.0
+  webview_flutter: 0.3.20+2
+  google_fonts: 4.0.3
+  carousel_slider: 4.2.1
+
+
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  
+
+#flutter_icons:D
+#  android: true
+#  ios: true
+#  image_path: "img/logo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,6 +80,12 @@ flutter:
     - img/profilePic.jpg
     - img/bg1.jpg
     - img/logo.png
+    - header/header1.jpg
+    - header/header2.jpg
+    - header/header3.jpg
+    - header/header4.jpg
+    - header/header5.jpg
+    - fonts/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -79,10 +99,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.ttf
+        - asset: fonts/Montserrat-Bold.ttf
+          weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

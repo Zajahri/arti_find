@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61427.80626353944!2d120.41893148468928!3d15.791405442745292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391495264dbc2b5%3A0xeb854dcfed99de7f!2sMunicipal%20Museum!5e0!3m2!1sen!2sph!4v1681325897215!5m2!1sen!2sph</domain>
+    </domain-config>
+</network-security-config>
