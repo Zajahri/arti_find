@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:async';
 import 'package:arti_find/pages/login_page.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class SplashScreen extends StatefulWidget {
