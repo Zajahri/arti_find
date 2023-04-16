@@ -29,21 +29,17 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircleAvatar(
+          children: const [
+            CircleAvatar(
               backgroundImage: AssetImage('img/logo.png'),
               radius: 100,
             ),
-            const SizedBox(height: 50.0),
-            Text(
-              "Balon Bayambang Museum: Home of Innovation",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                textStyle: const TextStyle(color: Color(0xFF6F1D1B), fontSize: 40,fontWeight: FontWeight.w700, ),
-              ),
+            SizedBox(height: 50.0),
+            Image(
+              image: AssetImage('img/byb1.png'),
             ),
-            const SizedBox(height: 100.0),
-            const CupertinoActivityIndicator(
+            SizedBox(height: 100.0),
+            CupertinoActivityIndicator(
               radius: 20,
               color: Color(0xFF6F1D1B),
             ),
