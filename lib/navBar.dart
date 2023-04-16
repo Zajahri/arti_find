@@ -12,8 +12,9 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 250,
+    return SafeArea(
+      child: SizedBox(
+        width: 250,
         child: Drawer(
           backgroundColor: const Color(0xFFE9DBC7),
           child: ListView(
@@ -24,85 +25,72 @@ class NavBar extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(
                     child: ClipOval(
                         child: Image(
-                          image: AssetImage('img/profilePic.jpg'),
-                          fit: BoxFit.cover,
-                        )
-                    )
-                ),
+                  image: AssetImage('img/profilePic.jpg'),
+                  fit: BoxFit.cover,
+                ))),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('img/bg1.jpg'),
-                      fit: BoxFit.cover,
-
-                    )
-                ),
+                  image: AssetImage('img/bg1.jpg'),
+                  fit: BoxFit.cover,
+                )),
               ),
-
               ListTile(
                 leading: const Icon(Icons.home),
                 title: const Text('secondPage'),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SecondPage()
-                    ),
+                    MaterialPageRoute(builder: (context) => const SecondPage()),
                   );
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.contact_mail),
                 title: const Text('Contact Us'),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ContactUs()
-                    ),
+                    MaterialPageRoute(builder: (context) => ContactUs()),
                   );
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.thumb_up),
                 title: const Text("Do's and Don'ts"),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const FourthPage()
-                    ),
+                    MaterialPageRoute(builder: (context) => const FourthPage()),
                   );
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.settings),
                 title: const Text("Settings"),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Settings()
-                    ),
+                    MaterialPageRoute(builder: (context) => const Settings()),
                   );
                 },
               ),
-              const SizedBox(height: 400,),
+              const SizedBox(
+                height: 400,
+              ),
               ListTile(
                 leading: const Icon(Icons.logout),
                 title: const Text('Log Out'),
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()
-                    ),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
               ),
-
             ],
           ),
         ),
+      ),
     );
-
-
   }
 }
-
-
-
