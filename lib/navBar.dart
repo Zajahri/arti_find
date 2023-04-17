@@ -75,7 +75,7 @@ class NavBar extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 400,
+                height: 380,
               ),
               ListTile(
                 leading: const Icon(Icons.logout),
