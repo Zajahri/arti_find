@@ -111,7 +111,7 @@ class _FirstScreenState extends State<FirstScreen> {
           'ArtiFind',
           style: GoogleFonts.montserrat(
             color: const Color(0xFF6F1D1B),
-            fontSize: 25,
+            fontSize: 30,
             fontWeight: FontWeight.w700,
           ),
         ),

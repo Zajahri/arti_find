@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    const SizedBox(height: 80.0),
+                    const SizedBox(height: 60.0),
                     Container(
                       alignment: Alignment.centerLeft,
                       child: const Text(
@@ -164,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    const SizedBox(height:90),
+                    const SizedBox(height:50),
                     Container(
                       height: 50,
                       decoration: BoxDecoration(
@@ -193,9 +193,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 30,),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -204,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                     child: const Text("Don't have an account? Create new account",
-                        style: TextStyle(fontFamily: 'Montserrat', fontSize: 17, fontWeight:FontWeight.w500),
+                        style: TextStyle(fontFamily: 'Montserrat', fontSize: 15, fontWeight:FontWeight.w500),
                     ),
                   ),
                ],
