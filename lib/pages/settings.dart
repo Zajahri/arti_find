@@ -7,6 +7,7 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const Scaffold(
         backgroundColor: Color(0xFFE9DBC7),
+
         body: Center(
             child: Text('Settings')
         )

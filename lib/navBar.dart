@@ -6,6 +6,7 @@ import 'pages/second_page.dart';
 import 'pages/contact_us.dart';
 import 'pages/fourth_page.dart';
 import 'pages/login_page.dart';
+import 'pages/reservation.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -41,6 +42,16 @@ class NavBar extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const SecondPage()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.book),
+                title: const Text('Reservation'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Reservation()),
                   );
                 },
               ),
