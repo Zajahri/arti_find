@@ -13,6 +13,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
 
   bool passwordObscured = true;
+  bool rptPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -215,6 +216,69 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
             ),
+            const SizedBox(height:10),
+
+            Container(
+              alignment: Alignment.centerLeft,
+              child: const Text(
+                'Confirm Password',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Montserrat',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10.0),
+            Container(
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 6,
+                      offset: Offset(0,2)
+                  )
+                ],
+              ),
+              height: 60,
+              child: TextField(
+                obscureText: rptPassword,
+                style: const TextStyle(
+                  color: Colors.black54,
+                  fontFamily: 'Montserrat',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: const EdgeInsets.only(top: 14),
+                  prefixIcon: const Icon(
+                    Icons.lock,
+                    color: Color(0xFFeb8c00),
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        rptPassword = !rptPassword;
+                      });
+                    },
+                    icon: Icon(
+                        rptPassword ? Icons.visibility_off : Icons.visibility,
+                        color: Colors.black54
+                    ),
+                  ),
+                  hintText: 'Password',
+                  hintStyle: const TextStyle(
+                    color: Colors.black38,
+                  ),
+                ),
+              ),
+            ),
 
             const SizedBox(height:50),
             Container(
@@ -239,7 +303,10 @@ class _SignupPageState extends State<SignupPage> {
                   child: const Center(
                     child: Text(
                       'Sign Up',
-                      style: TextStyle(color: Color(0xFFE9DBC7),fontFamily: 'Montserrat', fontSize: 20, fontWeight:FontWeight.w600),
+                      style: TextStyle(color: Color(0xFFE9DBC7),
+                          fontFamily: 'Montserrat',
+                          fontSize: 20,
+                          fontWeight:FontWeight.w600),
                     ),
                   ),
                 ),

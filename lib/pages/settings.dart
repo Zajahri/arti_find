@@ -5,11 +5,24 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return Scaffold(
         backgroundColor: Color(0xFFE9DBC7),
-
-        body: Center(
-            child: Text('Settings')
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: const Text("Settings",
+            style: TextStyle(color: Color(0xFF6F1D1B),
+                fontFamily: 'Montserrat',
+                fontWeight:FontWeight.w700),
+          ),
+          leading: IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
+          ),
+        ),
+        body: const Center(
+            child: Text('')
         )
     );
   }

@@ -1,15 +1,17 @@
-import 'package:arti_find/pages/contact_us.dart';
+import 'package:arti_find/main.dart';
+import 'package:arti_find/pages/feedback_form.dart';
 import 'package:arti_find/pages/settings.dart';
-import 'package:arti_find/pages/signup_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/second_page.dart';
-import 'pages/contact_us.dart';
-import 'pages/fourth_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'pages/about_page.dart';
 import 'pages/login_page.dart';
 import 'pages/reservation.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({Key? key}) : super(key: key);
+  static final DateTime _pickedDate = DateTime.now();
+
+  const NavBar({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,53 +32,52 @@ class NavBar extends StatelessWidget {
                   fit: BoxFit.cover,
                 ))),
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage('img/bg1.jpg'),
-                  fit: BoxFit.cover,
-                )),
+                  color: Color(0xFF6F1D1B),
+                ),
               ),
               ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text('secondPage'),
+                leading: const FaIcon(FontAwesomeIcons.house, size: 20,),
+                title: const Text('Home'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SecondPage()),
+                    MaterialPageRoute(builder: (context) => const FirstScreen()),
                   );
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.book),
+                leading: const FaIcon(FontAwesomeIcons.calendar, size: 20,),
                 title: const Text('Reservation'),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Reservation()),
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => Reservation(initialDate: _pickedDate ?? DateTime.now())
+                    ),
                   );
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.contact_mail),
-                title: const Text('Contact Us'),
+                leading: FaIcon(FontAwesomeIcons.infoCircle),
+                title: const Text('About'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ContactUs()),
+                    MaterialPageRoute(builder: (context) => About()),
                   );
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.thumb_up),
-                title: const Text("Do's and Don'ts"),
+                leading: const FaIcon(FontAwesomeIcons.comment),
+                title: const Text('Feedback Form'),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const FourthPage()),
+                    MaterialPageRoute(builder: (context) => const FeedBack()),
                   );
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.settings),
+                leading: const Icon(Icons.settings, size: 20,),
                 title: const Text("Settings"),
                 onTap: () {
                   Navigator.push(
@@ -86,10 +87,10 @@ class NavBar extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 380,
+                height: 320,
               ),
               ListTile(
-                leading: const Icon(Icons.logout),
+                leading: const Icon(Icons.logout, size: 20,),
                 title: const Text('Log Out'),
                 onTap: () {
                   Navigator.push(

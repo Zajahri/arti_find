@@ -1,8 +1,7 @@
-import 'package:arti_find/pages/fav.dart';
 import 'package:arti_find/pages/home_page.dart';
+import 'package:arti_find/pages/profile.dart';
 import 'package:arti_find/pages/settings.dart';
 import 'package:arti_find/pages/scan.dart';
-import 'package:arti_find/pages/history.dart';
 import 'package:flutter/material.dart';
 import 'navBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,7 +40,7 @@ class _FirstScreenState extends State<FirstScreen> {
     // const HistoryScan(),
     const Scan(),
     // const Favorites(),
-    const Settings()
+    const Profile()
   ];
 
   @override
@@ -63,11 +62,6 @@ class _FirstScreenState extends State<FirstScreen> {
           ),
         ],
       ),
-
-      // Column(mainAxisAlignment: MainAxisAlignment.center,children: const [
-      //     FaIcon(FontAwesomeIcons.clockRotateLeft,color: Color(0xFF6F1D1B),),
-      //     Text('History',style: TextStyle(fontSize: 12,color: Color(0xFF6F1D1B),),),],),
-
       GestureDetector(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -80,20 +74,15 @@ class _FirstScreenState extends State<FirstScreen> {
           ],
         ),
       ),
-
-      // Column(mainAxisAlignment: MainAxisAlignment.center,children: const [
-      //     Icon(Icons.favorite,color: Color(0xFF6F1D1B),),
-      //     Text('Favorites',style: TextStyle(fontSize: 12,color: Color(0xFF6F1D1B),),),],),
-
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
           Icon(
-            Icons.settings,
+            Icons.person,
             color: Color(0xFF6F1D1B),
           ),
           Text(
-            'Settings',
+            'Profile',
             style: TextStyle(
               fontSize: 12,
               color: Color(0xFF6F1D1B),
@@ -102,10 +91,9 @@ class _FirstScreenState extends State<FirstScreen> {
         ],
       ),
     ];
-
     return Scaffold(
       backgroundColor: const Color(0xFFE9DBC7),
-      drawer: const NavBar(),
+      drawer: NavBar(),
       appBar: AppBar(
         title: Text(
           'ArtiFind',

@@ -41,6 +41,7 @@ dependencies:
   webview_flutter: 0.3.20+2
   google_fonts: 4.0.3
   carousel_slider: 4.2.1
+  intl: ^0.17.0
 
 
 
