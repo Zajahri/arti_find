@@ -88,8 +88,6 @@ class _ReservationState extends State<Reservation> {
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
                   )
                 ],
               ),
@@ -146,8 +144,6 @@ class _ReservationState extends State<Reservation> {
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
                   )
                 ],
               ),
@@ -200,9 +196,7 @@ class _ReservationState extends State<Reservation> {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 6,
-                      offset: Offset(0, 2))
+                      color: Colors.black26,)
                 ],
               ),
               height: 50,
@@ -242,9 +236,7 @@ class _ReservationState extends State<Reservation> {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 6,
-                      offset: Offset(0, 2))
+                      color: Colors.black26,)
                 ],
               ),
               height: 50,

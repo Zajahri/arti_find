@@ -1,28 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class FeedBack extends StatefulWidget {
-  const FeedBack({Key? key}) : super(key: key);
-
+class CheckBoxTable extends StatefulWidget {
   @override
-  _FeedBackState createState() => _FeedBackState();
+  _CheckBoxTableState createState() => _CheckBoxTableState();
 }
 
-class _FeedBackState extends State<FeedBack> {
-  bool _isChecked1 = false;
-  bool _isChecked2 = false;
-  bool _isChecked3 = false;
-  bool _isChecked4 = false;
+class _CheckBoxTableState extends State<CheckBoxTable> {
+  List<bool> isCheckedList = [false, false, false, false, false];
+
+  @override
+  Widget build(BuildContext context) {
+    return Table(
+      columnWidths: const {
+        0: FlexColumnWidth(),
+        1: FlexColumnWidth(),
+        2: FlexColumnWidth(),
+        3: FlexColumnWidth(),
+        4: FlexColumnWidth(),
+      },
+      children: [
+        TableRow(
+          children: [
+            TableCell(
+              child: Checkbox(
+                value: isCheckedList[0],
+                onChanged: (value) {
+                  setState(() {
+                    isCheckedList[0] = value!;
+                  });
+                },
+              ),
+            ),
+            TableCell(
+              child: Checkbox(
+                value: isCheckedList[1],
+                onChanged: (value) {
+                  setState(() {
+                    isCheckedList[1] = value!;
+                  });
+                },
+              ),
+            ),
+            TableCell(
+              child: Checkbox(
+                value: isCheckedList[2],
+                onChanged: (value) {
+                  setState(() {
+                    isCheckedList[2] = value!;
+                  });
+                },
+              ),
+            ),
+            TableCell(
+              child: Checkbox(
+                value: isCheckedList[3],
+                onChanged: (value) {
+                  setState(() {
+                    isCheckedList[3] = value!;
+                  });
+                },
+              ),
+            ),
+            TableCell(
+              child: Checkbox(
+                value: isCheckedList[4],
+                onChanged: (value) {
+                  setState(() {
+                    isCheckedList[4] = value!;
+                  });
+                },
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+class FeedBack extends StatelessWidget {
+  const FeedBack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE9DBC7),
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         title: const Text(
-          'Feedback Form',
+          "Settings",
           style: TextStyle(
             color: Color(0xFF6F1D1B),
             fontFamily: 'Montserrat',
@@ -31,79 +99,35 @@ class _FeedBackState extends State<FeedBack> {
         ),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Color(0xFF6F1D1B),
-          ),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 2.0),
-        child: Table(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           children: [
-            TableRow(
-              children: [
-                const TableCell(
-                  child: Text(
-                    'Question 1',
-                    style: TextStyle(
-                      color: Color(0xFF6F1D1B),
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ),
-                TableCell(
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
-                        child: Checkbox(
-                          value: _isChecked1,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _isChecked1 = value ?? false;
-                            });
-                          },
-                        ),
-                      ),
-                      Expanded(
-                        child: Checkbox(
-                          value: _isChecked2,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _isChecked2 = value ?? false;
-                            });
-                          },
-                        ),
-                      ),
-                      Expanded(
-                        child: Checkbox(
-                          value: _isChecked3,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _isChecked3 = value ?? false;
-                            });
-                          },
-                        ),
-                      ),
-                      Expanded(
-                        child: Checkbox(
-                          value: _isChecked4,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _isChecked4 = value ?? false;
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            const Text(
+                  'Please take a moment to complete the following survey '
+                  'about your visit and experience at Museum of Bayambang. '
+                  'Your feedback is important to us as we continue to make improvements '
+                  'to better serve the public',
+              style: TextStyle(
+                color: Color(0xFF6F1D1B),
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+                fontSize: 15,
+              ),
+              textAlign: TextAlign.justify,
             ),
-
+            const SizedBox(height: 16),
+            CheckBoxTable(),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Process the feedback
+              },
+              child: const Text('Submit'),
+            ),
           ],
         ),
       ),

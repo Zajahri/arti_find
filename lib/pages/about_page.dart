@@ -7,7 +7,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE9DBC7),
+      backgroundColor: const Color(0xFFE9DBC7),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -28,7 +28,8 @@ class About extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
+      body:
+      Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,23 +54,42 @@ class About extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20.0),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                "   \tUnder the leadership of Dr. Cezar T. Quiambao, the Bayambang Municipal Museum was first conceptualized in 2011 and "
-                    "later pursued in 2016. Under Mayor Nina Jose-Quiambao's leadership, the museum opened to the public on February 15, "
-                    "2023, after years of hard work and dedication culminated in a soft opening on October 21, 2022.",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0,
-                  height: 2,
-                  fontWeight: FontWeight.w400,
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: RichText(
+                text: const TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Montserrat',
+                    fontSize: 18.0,
+                    height: 2,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: "\t   Under the leadership of  ",
+                    ),
+                    TextSpan(
+                      text: "Dr. Cezar T. Quiambao, ",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "the Bayambang Municipal Museum was first conceptualized in 2011 and "
+                          "later pursued in 2016. Under ",
+                    ),
+                    TextSpan(
+                      text: "Mayor Nina Jose-Quiambao's ",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "leadership, the museum opened to the public on February 15, 2023, after years of hard work and dedication culminated in a soft opening on October 21, 2022.",
+                    ),
+                  ],
                 ),
                 textAlign: TextAlign.justify,
               ),
             ),
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 5.0),
             const Center(
               child: Padding(
                 padding: EdgeInsets.all(10.0),
@@ -84,7 +104,7 @@ class About extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 5.0),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -95,11 +115,11 @@ class About extends StatelessWidget {
                       Icon(Icons.phone, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
-                        "Phone: 09661734240 / 09609186827",
+                        "Phone: 09661734240",
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -115,7 +135,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -131,7 +151,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
