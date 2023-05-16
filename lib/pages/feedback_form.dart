@@ -89,8 +89,9 @@ class FeedBack extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
-          "Settings",
+        title:
+        const Text(
+          "Feedback Form",
           style: TextStyle(
             color: Color(0xFF6F1D1B),
             fontFamily: 'Montserrat',
@@ -115,7 +116,7 @@ class FeedBack extends StatelessWidget {
                 color: Color(0xFF6F1D1B),
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w700,
-                fontSize: 15,
+                fontSize: 18,
               ),
               textAlign: TextAlign.justify,
             ),

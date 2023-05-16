@@ -1,5 +1,6 @@
 import 'package:arti_find/main.dart';
 import 'package:arti_find/pages/feedback_form.dart';
+import 'package:arti_find/pages/scan.dart';
 import 'package:arti_find/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -57,7 +58,7 @@ class NavBar extends StatelessWidget {
           ),
           const SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10), // Specify the desired horizontal padding
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.house, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Home'),
@@ -89,10 +90,9 @@ class NavBar extends StatelessWidget {
                   leading: const FaIcon(FontAwesomeIcons.expand, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Scan'),
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Reservation(initialDate: _pickedDate ?? DateTime.now()),
-                      ),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Scan()),
                     );
                   },
                 ),

@@ -28,13 +28,15 @@ class About extends StatelessWidget {
           ),
         ),
       ),
-      body:
-      Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+          body: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
@@ -55,13 +57,13 @@ class About extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(2.0),
               child: RichText(
                 text: const TextSpan(
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Montserrat',
-                    fontSize: 18.0,
+                    fontSize: 16.0,
                     height: 2,
                     fontWeight: FontWeight.w400,
                   ),
@@ -89,10 +91,10 @@ class About extends StatelessWidget {
                 textAlign: TextAlign.justify,
               ),
             ),
-            const SizedBox(height: 5.0),
-            const Center(
+              const SizedBox(height: 5.0),
+              const Center(
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(30.0),
                 child: Text(
                   "Contact Us",
                   style: TextStyle(
@@ -104,9 +106,9 @@ class About extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 5.0),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+              const SizedBox(height: 5.0),
+              Padding(
+              padding: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -160,8 +162,8 @@ class About extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 10.0),
-            Center(
+              const SizedBox(height: 20.0),
+              Center(
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMap()));
@@ -177,6 +179,7 @@ class About extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }
