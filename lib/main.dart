@@ -18,7 +18,7 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   int routeIndex = 0;
-  final List<Widget> _screens = [const Home(),  Profile()];
+  final List<Widget> _screens = [const Home(), const Profile()];
   void _onItemTapped(int index) => setState(() => routeIndex = index);
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -52,7 +52,7 @@ class _FirstScreenState extends State<FirstScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Profile()),
+                  MaterialPageRoute(builder: (context) => const Profile()),
                 );
               },
               icon: Icon(Icons.person, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : Colors.black),

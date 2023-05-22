@@ -36,7 +36,7 @@ class About extends StatelessWidget {
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
@@ -107,13 +107,13 @@ class About extends StatelessWidget {
               ),
             ),
               const SizedBox(height: 5.0),
-              const Padding(
-              padding: EdgeInsets.all(5.0),
+              Padding(
+              padding: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.phone, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -127,9 +127,9 @@ class About extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.facebook,color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -143,9 +143,9 @@ class About extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.location_on, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -173,8 +173,7 @@ class About extends StatelessWidget {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                   elevation: 4.0,
                 ),
-                child: const Text("View on map",
-                    style: TextStyle(color: Color(0xFFE9DBC7), fontWeight: FontWeight.bold)),
+                child: const Text("View on map", style: TextStyle(color: Color(0xFFE9DBC7), fontWeight: FontWeight.bold)),
               ),
             )
           ],
