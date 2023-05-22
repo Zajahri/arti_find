@@ -1,5 +1,6 @@
 import 'package:arti_find/main.dart';
 import 'package:arti_find/pages/feedback_form.dart';
+import 'package:arti_find/pages/profile.dart';
 import 'package:arti_find/pages/scan.dart';
 import 'package:arti_find/pages/settings.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +39,21 @@ class NavBar extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                const Text(
-                  'Moises Fernandez',
-                  style: TextStyle(
-                    color: Color(0xFF6F1D1B),
-                    fontSize: 20.0,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Moises Fernandez',
+                    style: TextStyle(
+                      color: Color(0xFF6F1D1B),
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 4.0),

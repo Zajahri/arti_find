@@ -1,85 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CheckBoxTable extends StatefulWidget {
+class FeedBack extends StatefulWidget {
+  const FeedBack({Key? key}) : super(key: key);
+
   @override
-  _CheckBoxTableState createState() => _CheckBoxTableState();
+  _FeedBackState createState() => _FeedBackState();
 }
 
-class _CheckBoxTableState extends State<CheckBoxTable> {
-  List<bool> isCheckedList = [false, false, false, false, false];
+class _FeedBackState extends State<FeedBack> {
+  List<bool?> satisfiedList = List<bool?>.filled(5, null);
 
-  @override
-  Widget build(BuildContext context) {
-    return Table(
-      columnWidths: const {
-        0: FlexColumnWidth(),
-        1: FlexColumnWidth(),
-        2: FlexColumnWidth(),
-        3: FlexColumnWidth(),
-        4: FlexColumnWidth(),
-      },
-      children: [
-        TableRow(
-          children: [
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[0],
+  Widget buildRatingQuestion(int index, String question) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            question,
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w400,
+              fontSize: 18,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Radio<bool?>(
+                value: true,
+                groupValue: satisfiedList[index],
                 onChanged: (value) {
                   setState(() {
-                    isCheckedList[0] = value!;
+                    satisfiedList[index] = value;
                   });
                 },
               ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[1],
+              const Text('Satisfied'),
+              Radio<bool?>(
+                value: false,
+                groupValue: satisfiedList[index],
                 onChanged: (value) {
                   setState(() {
-                    isCheckedList[1] = value!;
+                    satisfiedList[index] = value;
                   });
                 },
               ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[2],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[2] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[3],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[3] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[4],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[4] = value!;
-                  });
-                },
-              ),
-            ),
-          ],
-        ),
-      ],
+              const Text('Not Satisfied'),
+            ],
+          ),
+        ],
+      ),
     );
   }
-}
-class FeedBack extends StatelessWidget {
-  const FeedBack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +63,7 @@ class FeedBack extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title:
-        const Text(
+        title: const Text(
           "Feedback Form",
           style: TextStyle(
             color: Color(0xFF6F1D1B),
@@ -100,37 +73,40 @@ class FeedBack extends StatelessWidget {
         ),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B)),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-                  'Please take a moment to complete the following survey '
-                  'about your visit and experience at Museum of Bayambang. '
-                  'Your feedback is important to us as we continue to make improvements '
-                  'to better serve the public',
+              'Please take a moment to rate your satisfaction for the following questions:',
               style: TextStyle(
-                color: Color(0xFF6F1D1B),
                 fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w400,
                 fontSize: 18,
               ),
               textAlign: TextAlign.justify,
             ),
-            const SizedBox(height: 16),
-            CheckBoxTable(),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Process the feedback
-              },
-              child: const Text('Submit'),
-            ),
+            SizedBox(height: 20),
+            buildRatingQuestion(0, 'Question 1'),
+            buildRatingQuestion(1, 'Question 2'),
+            buildRatingQuestion(2, 'Question 3'),
+            buildRatingQuestion(3, 'Question 4'),
+            buildRatingQuestion(4, 'Question 5'),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Handle form submission
+          // Access the selected values from 'satisfiedList'
+          // and perform the necessary actions
+        },
+        label: const Text('Submit'),
+        icon: const Icon(Icons.send),
       ),
     );
   }
