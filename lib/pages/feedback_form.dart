@@ -1,85 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class CheckBoxTable extends StatefulWidget {
+class FeedBack extends StatefulWidget {
   @override
-  _CheckBoxTableState createState() => _CheckBoxTableState();
+  FeedBackState createState() => FeedBackState();
 }
 
-class _CheckBoxTableState extends State<CheckBoxTable> {
-  List<bool> isCheckedList = [false, false, false, false, false];
-
-  @override
-  Widget build(BuildContext context) {
-    return Table(
-      columnWidths: const {
-        0: FlexColumnWidth(),
-        1: FlexColumnWidth(),
-        2: FlexColumnWidth(),
-        3: FlexColumnWidth(),
-        4: FlexColumnWidth(),
-      },
-      children: [
-        TableRow(
-          children: [
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[0],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[0] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[1],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[1] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[2],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[2] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[3],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[3] = value!;
-                  });
-                },
-              ),
-            ),
-            TableCell(
-              child: Checkbox(
-                value: isCheckedList[4],
-                onChanged: (value) {
-                  setState(() {
-                    isCheckedList[4] = value!;
-                  });
-                },
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-class FeedBack extends StatelessWidget {
-  const FeedBack({Key? key}) : super(key: key);
+class FeedBackState extends State<FeedBack> {
+  double _rating = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -89,9 +17,8 @@ class FeedBack extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title:
-        const Text(
-          "Feedback Form",
+        title: const Text(
+          "Feedback",
           style: TextStyle(
             color: Color(0xFF6F1D1B),
             fontFamily: 'Montserrat',
@@ -100,36 +27,65 @@ class FeedBack extends StatelessWidget {
         ),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B),),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF6F1D1B)),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            const Text(
-                  'Please take a moment to complete the following survey '
-                  'about your visit and experience at Museum of Bayambang. '
-                  'Your feedback is important to us as we continue to make improvements '
-                  'to better serve the public',
-              style: TextStyle(
-                color: Color(0xFF6F1D1B),
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
+      body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: RatingBar.builder(
+                  initialRating: _rating,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    switch (index) {
+                      case 0:
+                        return const Icon(
+                          Icons.sentiment_very_dissatisfied,
+                          color: Colors.red,
+                        );
+                      case 1:
+                        return const Icon(
+                          Icons.sentiment_dissatisfied,
+                          color: Colors.redAccent,
+                        );
+                      case 2:
+                        return const Icon(
+                          Icons.sentiment_neutral,
+                          color: Colors.amber,
+                        );
+                      case 3:
+                        return const Icon(
+                          Icons.sentiment_satisfied,
+                          color: Colors.lightGreen,
+                        );
+                      case 4:
+                        return const Icon(
+                          Icons.sentiment_very_satisfied,
+                          color: Colors.green,
+                        );
+                      default:
+                        return const Icon(
+                          Icons.sentiment_neutral,
+                          color: Colors.amber,
+                        );
+                    }
+                  },
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _rating = rating;
+                    });
+                    print(rating);
+                  },
+                ),
               ),
-              textAlign: TextAlign.justify,
-            ),
-            const SizedBox(height: 16),
-            CheckBoxTable(),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Process the feedback
-              },
-              child: const Text('Submit'),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
