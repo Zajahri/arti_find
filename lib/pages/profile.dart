@@ -1,5 +1,5 @@
+import 'package:arti_find/main.dart';
 import 'package:flutter/material.dart';
-import 'package:profile/profile.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -9,7 +9,29 @@ class Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE9DBC7),
       appBar: AppBar(
-        title: const Text('Profile'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          "Profile",
+          style: TextStyle(
+            color: Color(0xFF6F1D1B),
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const FirstScreen()),
+            );
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Color(0xFF6F1D1B),
+          ),
+        ),
       ),
       body: GestureDetector(
         onTap: () {
@@ -25,7 +47,7 @@ class Profile extends StatelessWidget {
                     width: 130,
                     height: 130,
                     decoration: BoxDecoration(
-                      border: Border.all(width: 4, color: Colors.blue),
+                      border: Border.all(width: 4, color: Colors.grey),
                       boxShadow: [
                         BoxShadow(
                           spreadRadius: 2,
@@ -46,7 +68,7 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 20),
             const Center(
               child: Text(
-                'Moises Fernandez',
+                'Juan Dela Cruz',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -91,6 +113,11 @@ class Profile extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
+            const Divider(
+              color: Colors.grey, // Replace with your desired color
+              thickness: 2, // Specify the thickness of the divider
+            ),// Add a line below the button
           ],
         ),
       ),
@@ -99,8 +126,9 @@ class Profile extends StatelessWidget {
 }
 
 
+
 class ProfileEdit extends StatefulWidget {
-  const ProfileEdit({super.key});
+  const ProfileEdit({Key? key}) : super(key: key);
 
   @override
   _ProfileEditState createState() => _ProfileEditState();
@@ -134,7 +162,7 @@ class _ProfileEditState extends State<ProfileEdit> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 15, top: 20, right: 15),
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -148,7 +176,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       width: 130,
                       height: 130,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 4, color: Colors.blue),
+                        border: Border.all(width: 4, color: Colors.grey),
                         boxShadow: [
                           BoxShadow(
                             spreadRadius: 2,
@@ -171,53 +199,67 @@ class _ProfileEditState extends State<ProfileEdit> {
                         width: 40,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(width: 4, color: Colors.white),
-                          color: Colors.blue,
+                          border: Border.all(width: 4, color: Colors.grey),
+                          color: Colors.white,
                         ),
                         child: const Icon(
                           Icons.camera_alt_rounded,
-                          color: Colors.white,
+                          color: Colors.grey,
                         ),
                       ),
                     )
                   ],
                 ),
               ),
+              const SizedBox(height: 8.0),
+              buildFormField("First Name", "Juan", false),
+              buildFormField("Last Name", "Dela Cruz", false),
+              buildFormField("Email", "example@email.com", false),
+              buildFormField("Phone", "0909837412314", false),
+              buildFormField("Gender", "Male", false),
+              buildFormField("Password", "*******", true),
               const SizedBox(height: 30),
-              buildTextField("First Name", "Moises", false),
-              buildTextField("Last Name", "Fernandez", false),
-              buildTextField("Email", "example@email.com", false),
-              buildTextField("Phone", "0909837412314", false),
-              buildTextField("Gender", "Male", false),
-              buildTextField("Password", "*******", true),
-              const SizedBox(height: 30,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  OutlinedButton(onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 50),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                      ),
-                      child:const Text("Cancel", style: TextStyle(
-                          fontSize: 15,
-                          letterSpacing: 2,
-                          color: Colors.black
-                      ))
-                  ),
-                  ElevatedButton(onPressed: () {},
-                    style:  ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Profile()),
+                      );
+                    },
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     ),
-                    child: const Text("SAVE", style:TextStyle(
+                    child: const Text(
+                      "Cancel",
+                      style: TextStyle(
                         fontSize: 15,
                         letterSpacing: 2,
-                        color: Colors.black
-                    )),
-                  )
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      backgroundColor: const Color(0xFF6F1D1B), // Add this line to change the background color
+                    ),
+                    child: const Text(
+                      "SAVE",
+                      style: TextStyle(
+                        fontSize: 15,
+                        letterSpacing: 2,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -225,36 +267,68 @@ class _ProfileEditState extends State<ProfileEdit> {
     );
   }
 
-  Widget buildTextField(String labelText, String placeholder, bool isPasswordTextField) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: TextField(
-        obscureText: isPasswordTextField ? isObscurePassword : false,
-        decoration: InputDecoration(
-            suffixIcon: isPasswordTextField ?
-            IconButton(
-              icon: Icon(
-                isObscurePassword ? Icons.visibility_off : Icons.visibility,
-                color: Colors.grey,
-              ),
-              onPressed: () {
-                setState(() {
-                  isObscurePassword = !isObscurePassword;
-                });
-              },
-            )
-                : null,
-            contentPadding: const EdgeInsets.only(bottom:5),
-            labelText: labelText,
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            hintText: placeholder,
-            hintStyle: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey
-            )
+  Widget buildFormField(String labelText, String placeholder, bool isPasswordTextField) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 12.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            labelText,
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              color: Colors.black,
+              fontFamily: 'Montserrat',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
-      ),
+        const SizedBox(height: 12.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+              )
+            ],
+          ),
+          height: 50,
+          child: TextField(
+            keyboardType: TextInputType.text,
+            obscureText: isPasswordTextField ? isObscurePassword : false,
+            style: const TextStyle(
+              color: Colors.black54,
+              fontFamily: 'Montserrat',
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
+              hintText: placeholder,
+              hintStyle: const TextStyle(color: Colors.black38),
+              suffixIcon: isPasswordTextField
+                  ? IconButton(
+                icon: Icon(
+                  isObscurePassword ? Icons.visibility_off : Icons.visibility,
+                  color: Colors.grey,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isObscurePassword = !isObscurePassword;
+                  });
+                },
+              )
+                  : null,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

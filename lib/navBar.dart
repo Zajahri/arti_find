@@ -39,7 +39,7 @@ class NavBar extends StatelessWidget {
                 ),
                 const SizedBox(height: 8.0),
                 const Text(
-                  'Moises Fernandez',
+                  'Juan Dela Cruz',
                   style: TextStyle(
                     color: Color(0xFF6F1D1B),
                     fontSize: 20.0,
@@ -105,7 +105,7 @@ class NavBar extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FeedBack()),
+                      MaterialPageRoute(builder: (context) => const FeedBack()),
                     );
                   },
                 ),
