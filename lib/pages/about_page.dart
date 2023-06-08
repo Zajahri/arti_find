@@ -32,7 +32,7 @@ class About extends StatelessWidget {
             physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -107,13 +107,13 @@ class About extends StatelessWidget {
               ),
             ),
               const SizedBox(height: 5.0),
-              Padding(
-              padding: const EdgeInsets.all(5.0),
+              const Padding(
+              padding: EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.phone, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -127,9 +127,9 @@ class About extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.facebook,color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -143,13 +143,13 @@ class About extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.location_on, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
-                        "Address: Bayambang, Pangasinan",
+                        "Address: Bayambang Municipal \nPlaza, Brgy. Zone 2, Bayambang, \nPangasinan",
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
@@ -202,7 +202,7 @@ class GoogleMap extends StatelessWidget {
         ),
       ),
       body: const WebView(
-        initialUrl: 'https://www.google.com/maps/place/Municipal+Museum/@15.809524,120.456408,3a,75y,90t/data=!3m11!1e2!3m9!1sAF1QipPFtoXku_qlfthU419uRoxIya1t42LhOy-uwE-6!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPFtoXku_qlfthU419uRoxIya1t42LhOy-uwE-6%3Dw203-h152-k-no!7i1600!8i1200!9m2!1b1!2i55!4m9!3m8!1s0x3391495264dbc2b5:0xeb854dcfed99de7f!8m2!3d15.809524!4d120.456408!10e5!14m1!1BCgIgARICGAI!16s%2Fg%2F11s5s64mt0',
+        initialUrl: 'https://www.google.com/maps/place/Municipal+Museum/@15.8094731,120.4562875,19z/data=!4m15!1m8!3m7!1s0x3391495264dbc2b5:0xeb854dcfed99de7f!2sMunicipal+Museum!8m2!3d15.809524!4d120.456408!10e5!16s%2Fg%2F11s5s64mt0!3m5!1s0x3391495264dbc2b5:0xeb854dcfed99de7f!8m2!3d15.809524!4d120.456408!16s%2Fg%2F11s5s64mt0?entry=ttu',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );

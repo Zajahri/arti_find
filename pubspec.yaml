@@ -43,6 +43,7 @@ dependencies:
   intl: ^0.17.0
   profile: 0.0.1
   flutter_rating_bar: 4.0.1
+  dropdown_button2: 2.1.3
 
 
 

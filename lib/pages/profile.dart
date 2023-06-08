@@ -247,7 +247,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 50),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                      backgroundColor: const Color(0xFF6F1D1B), // Add this line to change the background color
+                      backgroundColor: const Color(0xFF6F1D1B),
                     ),
                     child: const Text(
                       "SAVE",

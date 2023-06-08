@@ -26,7 +26,7 @@ class _FirstScreenState extends State<FirstScreen> {
     drawer: const NavBar(),
     appBar: AppBar(
       title: const Text(
-        'ArtiFind',
+        'MuBa',
         style: TextStyle(color: Color(0xFF6F1D1B), fontSize: 30, fontWeight: FontWeight.w700),
       ),
       backgroundColor: Colors.transparent,

@@ -153,7 +153,7 @@ class _FeedBackState extends State<FeedBack> {
                         hintStyle: TextStyle(color: Colors.black38, fontFamily: 'Montserrat', fontSize: 16,)),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 80),
                 Container(
                   height: 50,
                   decoration: BoxDecoration(

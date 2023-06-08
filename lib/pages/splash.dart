@@ -3,42 +3,54 @@ import 'package:flutter/cupertino.dart';
 import 'dart:async';
 import 'package:arti_find/pages/login_page.dart';
 
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => const LoginPage(),),
-      );
+    Timer(const Duration(seconds: 5), () {
+      navigateToLoginPage();
     });
   }
+
+  void navigateToLoginPage() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) => const LoginPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE9DBC7),
+      backgroundColor: Color(0xFFE9DBC7),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            CircleAvatar(
-              backgroundImage: AssetImage('img/logo.png'),
-              radius: 100,
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('img/svf.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            SizedBox(height: 50.0),
-            Image(
+            const SizedBox(height: 50.0),
+            const Image(
               image: AssetImage('img/byb1.png'),
             ),
-            SizedBox(height: 100.0),
-            CupertinoActivityIndicator(
+            const SizedBox(height: 100.0),
+            const CupertinoActivityIndicator(
               radius: 20,
               color: Color(0xFF6F1D1B),
             ),
@@ -48,4 +60,3 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-

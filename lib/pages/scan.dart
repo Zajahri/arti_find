@@ -6,7 +6,7 @@ class Scan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFFE9DBC7),
+        backgroundColor: const Color(0xFFE9DBC7),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
