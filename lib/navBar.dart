@@ -25,38 +25,38 @@ class NavBar extends StatelessWidget {
               color: Color(0xFFE9DBC7),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: 80.0,
-                  height: 80.0,
+                  width: 200.0,
+                  height: 100.0,
                   decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('img/tao.png'),
+                      image: AssetImage('img/byb1.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                const SizedBox(height: 8.0),
-                const Text(
-                  'Juan Dela Cruz',
-                  style: TextStyle(
-                    color: Color(0xFF6F1D1B),
-                    fontSize: 20.0,
-                  ),
-                ),
-                const SizedBox(height: 4.0),
-                const Text(
-                  'example@gmail.com',
-                  style: TextStyle(
-                    color: Color(0xFF6F1D1B),
-                    fontSize: 15.0,
-                  ),
-                ),
+                SizedBox.shrink(),
+                // const Text(
+                //   'Juan Dela Cruz',
+                //   style: TextStyle(
+                //     color: Color(0xFF6F1D1B),
+                //     fontSize: 20.0,
+                //   ),
+                // ),
+                SizedBox.shrink(),
+                // const Text(
+                //   'example@gmail.com',
+                //   style: TextStyle(
+                //     color: Color(0xFF6F1D1B),
+                //     fontSize: 15.0,
+                //   ),
+                // ),
               ],
             ),
           ),
-          const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
@@ -70,7 +70,7 @@ class NavBar extends StatelessWidget {
                   },
                 ),
               ),
-              Padding(
+        /*      Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.calendar, size: 20, color: Color(0xFF6F1D1B)),
@@ -83,7 +83,7 @@ class NavBar extends StatelessWidget {
                     );
                   },
                 ),
-              ),
+              ),*/
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListTile(
@@ -136,8 +136,8 @@ class NavBar extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 260),
-              Padding(
+              const SizedBox(height: 290),
+        /*      Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
                   leading: const Icon(Icons.logout, size: 20, color: Color(0xFF6F1D1B)),
@@ -149,7 +149,7 @@ class NavBar extends StatelessWidget {
                     );
                   },
                 ),
-              ),
+              ),*/
             ],
           ),
         );

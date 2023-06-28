@@ -52,10 +52,10 @@ class _FirstScreenState extends State<FirstScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Profile()),
+                  MaterialPageRoute(builder: (context) => const Settings()),
                 );
               },
-              icon: Icon(Icons.person, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : Colors.black),
+              icon: Icon(Icons.settings, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : Colors.black),
             ),
           ],
         ),

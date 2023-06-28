@@ -57,7 +57,7 @@ class About extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             Padding(
-              padding: EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(2.0),
               child: RichText(
                 text: const TextSpan(
                   style: TextStyle(

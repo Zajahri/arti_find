@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:async';
-import 'package:arti_find/pages/login_page.dart';
+import '../main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigateToLoginPage() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (_) => const LoginPage(),
+        builder: (_) => const FirstScreen()
       ),
     );
   }
