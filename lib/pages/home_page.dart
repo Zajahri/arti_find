@@ -43,141 +43,217 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: const Color(0xFFE9DBC7),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 20.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                'Welcome!',
-                style: GoogleFonts.montserrat(
-                  color: Colors.black87,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  prefixIcon: const Icon(Icons.search),
-                  filled: true,
-                  fillColor: Colors.grey.shade100,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide.none,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 8.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Text(
+                  'Discover Bayambang Museum:',
+                  style: GoogleFonts.montserrat(
+                    color: Color(0xFF6F1D1B),
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
                   ),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 12.0),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 250,
-              child: PageView.builder(
-                controller: pageController,
-                onPageChanged: (index) {
-                  setState(() {
-                    pageNo = index;
-                  });
-                },
-                itemBuilder: (_, index) {
-                  return Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 4,
-                      vertical: 25,
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Text(
+                  'Exploring the Past through Image Recognition',
+                  style: GoogleFonts.montserrat(
+                    color: Colors.black87,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: const Icon(Icons.search),
+                    filled: true,
+                    fillColor: Colors.grey.shade100,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide.none,
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset(
-                        'header/header${index + 1}.jpg',
-                        fit: BoxFit.cover,
+                    contentPadding: const EdgeInsets.symmetric(vertical: 12.0),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 250,
+                child: PageView.builder(
+                  controller: pageController,
+                  onPageChanged: (index) {
+                    setState(() {
+                      pageNo = index;
+                    });
+                  },
+                  itemBuilder: (_, index) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 4,
+                        vertical: 25,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset(
+                          'header/header${index + 1}.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount: 5,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  5,
+                      (index) =>
+                      Container(
+                        margin: const EdgeInsets.all(2.0),
+                        child: Icon(
+                          Icons.circle,
+                          size: 12.0,
+                          color: pageNo == index
+                              ? const Color(0xFF6F1D1B)
+                              : Colors.grey.shade400,
+                        ),
+                      ),
+                ),
+              ),
+              const SizedBox(height: 5.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Text(
+                  'Categories',
+                  style: GoogleFonts.montserrat(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30.0),
+              const SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CategoryItem(
+                        icon: Icons.brush,
+                        backgroundColor: Colors.white,
+                        label: 'Culture',
+                      ),
+                      SizedBox(width: 30),
+                      CategoryItem(
+                        icon: Icons.school,
+                        backgroundColor: Colors.white,
+                        label: 'Education',
+                      ),
+                      SizedBox(width: 30),
+                      CategoryItem(
+                        icon: Icons.grass,
+                        backgroundColor: Colors.white,
+                        label: 'Agriculture',
+                      ),
+                      SizedBox(width: 30),
+                      CategoryItem(
+                        icon: Icons.museum,
+                        backgroundColor: Colors.white,
+                        label: 'History',
+                      ),
+                      SizedBox(width: 30),
+                      CategoryItem(
+                        icon: Icons.lightbulb,
+                        backgroundColor: Colors.white,
+                        label: 'Innovation',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Text(
+                  'Book an Appointment',
+                  style: GoogleFonts.montserrat(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  "\t \t Book Now to secure your spot at our museum and enjoy an unforgettable experience. Click the button below to avoid queues and delays. Don't miss out!",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 16.0,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+              ),
+              const SizedBox(height: 15.0),
+              Center(
+                child: Container(
+                  height: 30,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF6F1D1B),
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 6,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        // Add your desired functionality here
+                      },
+                      child: const Center(
+                        child: Text(
+                          'Book Now',
+                          style: TextStyle(
+                            color: Color(0xFFE9DBC7),
+                            fontFamily: 'Montserrat',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
                     ),
-                  );
-                },
-                itemCount: 5,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                5,
-                    (index) => Container(
-                  margin: const EdgeInsets.all(2.0),
-                  child: Icon(
-                    Icons.circle,
-                    size: 12.0,
-                    color: pageNo == index
-                        ? const Color(0xFF6F1D1B)
-                        : Colors.grey.shade400,
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                'Categories',
-                style: GoogleFonts.montserrat(
-                  color: Colors.black87,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CategoryItem(
-                      icon: Icons.brush,
-                      backgroundColor: Colors.white,
-                      label: 'Culture&Arts',
-                    ),
-                    SizedBox(width: 18),
-                    CategoryItem(
-                      icon: Icons.school,
-                      backgroundColor: Colors.white,
-                      label: 'Education',
-                    ),
-                    SizedBox(width: 18),
-                    CategoryItem(
-                      icon: Icons.grass,
-                      backgroundColor: Colors.white,
-                      label: 'Agriculture',
-                    ),
-                    SizedBox(width: 18),
-                    CategoryItem(
-                      icon: Icons.museum,
-                      backgroundColor: Colors.white,
-                      label: 'History',
-                    ),
-                    SizedBox(width: 18),
-                    CategoryItem(
-                      icon: Icons.lightbulb,
-                      backgroundColor: Colors.white,
-                      label: 'Innovation',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
 class CategoryItem extends StatelessWidget {
   final IconData icon;
   final Color backgroundColor;
@@ -193,30 +269,33 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 35,
-          height: 35,
+          width: 45,
+          height: 45,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: backgroundColor,
           ),
           child: Icon(
             icon,
-            color: const Color(0xFF6F1D1B), // Updated icon color
-            size: 20,
+            color: const Color(0xFF6F1D1B),
+            size: 30,
           ),
         ),
         const SizedBox(height: 8),
-        Text(
-          label,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 11,
+        SizedBox(
+          width: 60,
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 12,
+            ),
           ),
         ),
       ],
     );
   }
 }
-

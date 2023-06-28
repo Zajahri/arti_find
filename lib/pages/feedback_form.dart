@@ -135,25 +135,33 @@ class _FeedBackState extends State<FeedBack> {
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.black26,)
+                        color: Colors.black26,
+                      )
                     ],
                   ),
                   height: 250,
-                  child: const TextField(
+                  child: TextFormField(
                     keyboardType: TextInputType.text,
-                    style: TextStyle(
-                        color: Colors.black54,
+                    style: const TextStyle(
+                      color: Colors.black54,
+                      fontFamily: 'Montserrat',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(top: -110, left: 14, right: 14),
+                      hintText: 'Please fill in your answer',
+                      hintStyle: TextStyle(
+                        color: Colors.black38,
                         fontFamily: 'Montserrat',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.only(top: -110,left: 14, right: 14),
-                        hintText: 'Please fill in your answer',
-                        hintStyle: TextStyle(color: Colors.black38, fontFamily: 'Montserrat', fontSize: 16,)),
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(height: 80),
+
+                const SizedBox(height: 50),
                 Container(
                   height: 50,
                   decoration: BoxDecoration(
