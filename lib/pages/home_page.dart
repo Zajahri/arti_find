@@ -17,15 +17,15 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     pageController = PageController(initialPage: 0, viewportFraction: 0.85);
-    Timer.periodic(const Duration(seconds: 3), (timer) {
-      if (pageNo == 5) {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (pageNo == 3) {
         pageNo = 0;
         pageController.jumpToPage(pageNo);
       } else {
         pageNo++;
         pageController.animateToPage(
           pageNo,
-          duration: const Duration(seconds: 1),
+          duration: const Duration(seconds: 5),
           curve: Curves.easeInOutCirc,
         );
       }
@@ -47,30 +47,6 @@ class _HomeState extends State<Home> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 8.0),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  'Discover Bayambang Museum:',
-                  style: GoogleFonts.montserrat(
-                    color: Color(0xFF6F1D1B),
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  'Exploring the Past through Image Recognition',
-                  style: GoogleFonts.montserrat(
-                    color: Colors.black87,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
@@ -88,7 +64,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 250,
+                height: 300,
                 child: PageView.builder(
                   controller: pageController,
                   onPageChanged: (index) {
@@ -99,36 +75,177 @@ class _HomeState extends State<Home> {
                   itemBuilder: (_, index) {
                     return Container(
                       margin: const EdgeInsets.symmetric(
-                        horizontal: 4,
-                        vertical: 25,
+                        horizontal: 2,
+                        vertical: 20,
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset(
-                          'header/header${index + 1}.jpg',
-                          fit: BoxFit.cover,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: SizedBox(
+                            width: 380,
+                            child: Stack(
+                              children: [
+                                Image.asset(
+                                  'header/header${index + 1}.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(10.0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      if (index == 0)
+                                        Positioned(
+                                          bottom: 150,
+                                          left: 5,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white.withOpacity(0.1),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              'Welcome to Bayambang\nMunicipal Museum:',
+                                              style: GoogleFonts.montserrat(
+                                                color: Color(0xFF6F1D1B),
+                                                fontSize: 26.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 0)
+                                        Positioned(
+                                          bottom: 45,
+                                          left: 20,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              'Exploring the Past through\nImage Recognition',
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 1)
+                                        Positioned(
+                                          bottom: 150,
+                                          left: 2,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              "International Museum Day",
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 22.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 1)
+                                        Positioned(
+                                          bottom: 75,
+                                          left: 10,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              'Every May 8',
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 2)
+                                        Positioned(
+                                          bottom: 178,
+                                          left: 2,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              "National Museum Month",
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 22.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 2)
+                                        Positioned(
+                                          bottom: 50,
+                                          left: 10,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              'Join us in October for National \nMuseum Month, a month-long \ncelebration.',
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     );
+
                   },
-                  itemCount: 5,
+                  itemCount: 3,
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  5,
-                      (index) =>
-                      Container(
-                        margin: const EdgeInsets.all(2.0),
-                        child: Icon(
-                          Icons.circle,
-                          size: 12.0,
-                          color: pageNo == index
-                              ? const Color(0xFF6F1D1B)
-                              : Colors.grey.shade400,
-                        ),
-                      ),
+                  3,
+                      (index) => Container(
+                    margin: const EdgeInsets.all(2.0),
+                    child: Icon(
+                      Icons.circle,
+                      size: 12.0,
+                      color: pageNo == index
+                          ? const Color(0xFF6F1D1B)
+                          : Colors.grey.shade400,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 5.0),
@@ -197,13 +314,13 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const SizedBox(height: 15.0),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: Text(
-                  "\t \t Book Now to secure your spot at our museum and enjoy an unforgettable experience. Click the button below to avoid queues and delays. Don't miss out!",
-                  style: TextStyle(
+                  "\t \t Book Now to secure your spot at our museum and enjoy an unforgettable experience. Click the button below to avoid queues and delays.",
+                  style: GoogleFonts.montserrat(
                     color: Colors.black87,
-                    fontSize: 16.0,
+                    fontSize: 17.0,
                     height: 1.5,
                   ),
                   textAlign: TextAlign.justify,
@@ -229,7 +346,7 @@ class _HomeState extends State<Home> {
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () {
-                        // Add your desired functionality here
+
                       },
                       child: const Center(
                         child: Text(

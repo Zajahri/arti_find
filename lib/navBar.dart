@@ -5,8 +5,6 @@ import 'package:arti_find/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'pages/about_page.dart';
-import 'pages/login_page.dart';
-import 'pages/reservation.dart';
 
 class NavBar extends StatelessWidget {
   static final DateTime _pickedDate = DateTime.now();
@@ -38,7 +36,7 @@ class NavBar extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
                 // const Text(
                 //   'Juan Dela Cruz',
                 //   style: TextStyle(
@@ -46,7 +44,7 @@ class NavBar extends StatelessWidget {
                 //     fontSize: 20.0,
                 //   ),
                 // ),
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
                 // const Text(
                 //   'example@gmail.com',
                 //   style: TextStyle(

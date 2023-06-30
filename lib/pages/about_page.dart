@@ -63,7 +63,7 @@ class About extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Montserrat',
-                    fontSize: 16.0,
+                    fontSize: 20.0,
                     height: 2,
                     fontWeight: FontWeight.w400,
                   ),
@@ -94,11 +94,11 @@ class About extends StatelessWidget {
               const SizedBox(height: 5.0),
               const Center(
               child: Padding(
-                padding: EdgeInsets.all(30.0),
+                padding: EdgeInsets.all(20.0),
                 child: Text(
                   "Contact Us",
                   style: TextStyle(
-                    color: Color(0xFF6F1D1B),
+                      color: Color(0xFF6F1D1B),
                     fontFamily: 'Montserrat',
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -106,7 +106,7 @@ class About extends StatelessWidget {
                 ),
               ),
             ),
-              const SizedBox(height: 5.0),
+              const SizedBox(height: 1.0),
               const Padding(
               padding: EdgeInsets.all(5.0),
               child: Column(
@@ -121,7 +121,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 16.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -137,7 +137,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 16.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -153,7 +153,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 16.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
