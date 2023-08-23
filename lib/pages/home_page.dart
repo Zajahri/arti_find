@@ -261,13 +261,13 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const SizedBox(height: 30.0),
-              const SingleChildScrollView(
+               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       CategoryItem(
                         icon: Icons.brush,
                         backgroundColor: Colors.white,

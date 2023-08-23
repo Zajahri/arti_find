@@ -107,13 +107,13 @@ class About extends StatelessWidget {
               ),
             ),
               const SizedBox(height: 1.0),
-              const Padding(
+               Padding(
               padding: EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.phone, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -129,7 +129,7 @@ class About extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.facebook,color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -145,7 +145,7 @@ class About extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.location_on, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
