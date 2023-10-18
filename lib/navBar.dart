@@ -1,3 +1,5 @@
+
+
 import 'package:arti_find/main.dart';
 import 'package:arti_find/pages/feedback_form.dart';
 import 'package:arti_find/pages/scan.dart';
@@ -5,6 +7,7 @@ import 'package:arti_find/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'pages/about_page.dart';
+import 'pages/history.dart';
 
 class NavBar extends StatelessWidget {
   static final DateTime _pickedDate = DateTime.now();
@@ -82,6 +85,7 @@ class NavBar extends StatelessWidget {
                   },
                 ),
               ),*/
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListTile(
@@ -91,6 +95,19 @@ class NavBar extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Scan()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: ListTile(
+                  leading: const FaIcon(FontAwesomeIcons.clockRotateLeft, size: 20, color: Color(0xFF6F1D1B)),
+                  title: const Text('History'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => History()),
                     );
                   },
                 ),

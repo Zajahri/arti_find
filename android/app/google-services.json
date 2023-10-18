@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "219366331108",
+    "project_id": "artifind-74ab3",
+    "storage_bucket": "artifind-74ab3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219366331108:android:896d945eacf7be6f3592f1",
+        "android_client_info": {
+          "package_name": "com.example.arti_find"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0V610K2G46lUp5v4majI36l3l66mNq5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
