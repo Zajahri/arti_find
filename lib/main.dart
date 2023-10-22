@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'navBar.dart';
 import 'package:arti_find/pages/home_page.dart';
 import 'package:arti_find/pages/profile.dart';
-import 'package:arti_find/pages/settings.dart';
+import 'package:arti_find/pages/history.dart';
 import 'package:arti_find/pages/scan.dart';
 import 'package:arti_find/pages/splash.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -53,12 +53,12 @@ class _FirstScreenState extends State<FirstScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Settings()),
+                  MaterialPageRoute(builder: (context) => const History()),
                 );
               },
-              icon: Icon(Icons.settings, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : Colors.black),
+              icon: Icon(Icons.history, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : const Color(0xFF6F1D1B),
             ),
-          ],
+            ), ],
         ),
       ),
     ),

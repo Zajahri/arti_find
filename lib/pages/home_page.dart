@@ -2,6 +2,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'categories/agri.dart';
+import 'categories/culture.dart';
+import 'categories/education.dart';
+import 'categories/history.dart';
+import 'categories/innov.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -47,22 +53,23 @@ class _HomeState extends State<Home> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: const Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.grey.shade100,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 12.0),
-                  ),
-                ),
-              ),
+              /* Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                 child: TextField(
+                   decoration: InputDecoration(
+                     hintText: 'Search',
+                     prefixIcon: const Icon(Icons.search),
+                     filled: true,
+                     fillColor: Colors.grey.shade100,
+                     border: OutlineInputBorder(
+                       borderRadius: BorderRadius.circular(10.0),
+                       borderSide: BorderSide.none,
+                     ),
+                     contentPadding: const EdgeInsets.symmetric(vertical: 12.0),
+                   ),
+                 ),
+               ),
+              */
               SizedBox(
                 height: 300,
                 child: PageView.builder(
@@ -227,7 +234,6 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     );
-
                   },
                   itemCount: 3,
                 ),
@@ -261,41 +267,66 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const SizedBox(height: 30.0),
-               SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       CategoryItem(
                         icon: Icons.brush,
                         backgroundColor: Colors.white,
                         label: 'Culture',
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const CulturePage(),
+                          ));
+                        },
                       ),
                       SizedBox(width: 30),
                       CategoryItem(
                         icon: Icons.school,
                         backgroundColor: Colors.white,
                         label: 'Education',
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const EducationPage(),
+                          ));
+                        },
                       ),
                       SizedBox(width: 30),
                       CategoryItem(
                         icon: Icons.grass,
                         backgroundColor: Colors.white,
                         label: 'Agriculture',
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const AgriculturePage(),
+                          ));
+                        },
                       ),
                       SizedBox(width: 30),
                       CategoryItem(
                         icon: Icons.museum,
                         backgroundColor: Colors.white,
                         label: 'History',
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const HistoryPage(),
+                          ));
+                        },
                       ),
                       SizedBox(width: 30),
                       CategoryItem(
                         icon: Icons.lightbulb,
                         backgroundColor: Colors.white,
                         label: 'Innovation',
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const InnovationPage(),
+                          ));
+                        },
                       ),
                     ],
                   ),
@@ -317,7 +348,7 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: Text(
-                  "\t \t Book Now to secure your spot at our museum and enjoy an unforgettable experience. Click the button below to avoid queues and delays.",
+                  "Book Now to secure your spot at our museum and enjoy an unforgettable experience. Click the button below to avoid queues and delays.",
                   style: GoogleFonts.montserrat(
                     color: Colors.black87,
                     fontSize: 17.0,
@@ -346,7 +377,7 @@ class _HomeState extends State<Home> {
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () {
-
+                        // Handle the book now button click
                       },
                       child: const Center(
                         child: Text(
@@ -359,12 +390,10 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-
                     ),
                   ),
                 ),
               ),
-
             ],
           ),
         ),
@@ -372,48 +401,54 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
 class CategoryItem extends StatelessWidget {
   final IconData icon;
   final Color backgroundColor;
   final String label;
+  final VoidCallback? onTap;
 
   const CategoryItem({
     Key? key,
     required this.icon,
     required this.backgroundColor,
     required this.label,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 45,
-          height: 45,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: backgroundColor,
-          ),
-          child: Icon(
-            icon,
-            color: const Color(0xFF6F1D1B),
-            size: 30,
-          ),
-        ),
-        const SizedBox(height: 8),
-        SizedBox(
-          width: 60,
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 12,
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: backgroundColor,
+            ),
+            child: Icon(
+              icon,
+              color: const Color(0xFF6F1D1B),
+              size: 30,
             ),
           ),
-        ),
-      ],
+          const SizedBox(height: 8),
+          SizedBox(
+            width: 60,
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({Key? key}) : super(key: key);
+class History extends StatelessWidget {
+  const History({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class Settings extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: const Text("Settings",
+          title: const Text("History of Appointment",
             style: TextStyle(color: Color(0xFF6F1D1B),
                 fontFamily: 'Montserrat',
                 fontWeight:FontWeight.w700),

@@ -6,6 +6,9 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color(0xFFE9DBC7),
       appBar: AppBar(
@@ -28,52 +31,52 @@ class About extends StatelessWidget {
           ),
         ),
       ),
-          body: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-             Row(
+      body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   'img/lgu.png',
-                  height: 80,
+                  height: screenHeight * 0.1,
                 ),
                 const SizedBox(width: 30),
                 Image.asset(
                   'img/muse.png',
-                  height: 80,
+                  height: screenHeight * 0.1,
                 ),
                 const SizedBox(width: 30),
                 Image.asset(
                   'img/tour.png',
-                  height: 80,
+                  height: screenHeight * 0.1,
                 ),
               ],
             ),
-            const SizedBox(height: 20.0),
+            SizedBox(height: screenHeight * 0.02),
             Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(10.0),
               child: RichText(
                 text: const TextSpan(
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Montserrat',
-                    fontSize: 20.0,
+                    fontSize: 17.0,
                     height: 2,
                     fontWeight: FontWeight.w400,
                   ),
                   children: [
                     TextSpan(
-                      text: "\t   Under the leadership of  ",
+                      text: "\tUnder the leadership of ",
                     ),
                     TextSpan(
-                      text: "Dr. Cezar T. Quiambao, ",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      text: "Cezar T. Quiambao, ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     TextSpan(
                       text: "the Bayambang Municipal Museum was first conceptualized in 2011 and "
@@ -81,24 +84,29 @@ class About extends StatelessWidget {
                     ),
                     TextSpan(
                       text: "Mayor Nina Jose-Quiambao's ",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     TextSpan(
-                      text: "leadership, the museum opened to the public on February 15, 2023, after years of hard work and dedication culminated in a soft opening on October 21, 2022.",
+                      text:
+                      "leadership, the museum opened to the public on February 15, 2023, after years of hard work and dedication culminated in a soft opening on October 21, 2022.",
                     ),
                   ],
                 ),
                 textAlign: TextAlign.justify,
+                softWrap: true, // Allow text to wrap to the next line if it doesn't fit
               ),
             ),
-              const SizedBox(height: 5.0),
-              const Center(
+
+            SizedBox(height: screenHeight * 0.005),
+            const Center(
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
                   "Contact Us",
                   style: TextStyle(
-                      color: Color(0xFF6F1D1B),
+                    color: Color(0xFF6F1D1B),
                     fontFamily: 'Montserrat',
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -106,14 +114,14 @@ class About extends StatelessWidget {
                 ),
               ),
             ),
-              const SizedBox(height: 1.0),
-               Padding(
+            SizedBox(height: screenHeight * 0.001),
+            const Padding(
               padding: EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.phone, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -121,7 +129,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 19.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -129,15 +137,15 @@ class About extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Row(
-                    children: const [
-                      Icon(Icons.facebook,color: Color(0xFF6F1D1B), size: 20),
+                    children: [
+                      Icon(Icons.facebook, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
                         "Facebook: Balon Bayambang",
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 19.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -145,7 +153,7 @@ class About extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.location_on, color: Color(0xFF6F1D1B), size: 20),
                       SizedBox(width: 10),
                       Text(
@@ -153,7 +161,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 20.0,
+                          fontSize: 19.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -162,27 +170,34 @@ class About extends StatelessWidget {
                 ],
               ),
             ),
-              const SizedBox(height: 20.0),
-              Center(
+            SizedBox(height: screenHeight * 0.02),
+            Center(
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMap()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF6F1D1B),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                  elevation: 4.0,
+                  primary: const Color(0xFF6F1D1B),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
-                child: const Text("View on map", style: TextStyle(color: Color(0xFFE9DBC7), fontWeight: FontWeight.bold)),
+                child: const Text(
+                  "View on map",
+                  style: TextStyle(
+                    color: Color(0xFFE9DBC7),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
-    ),
     );
   }
 }
+
 class GoogleMap extends StatelessWidget {
   const GoogleMap({Key? key}) : super(key: key);
   @override

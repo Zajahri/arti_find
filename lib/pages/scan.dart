@@ -279,6 +279,13 @@ class TfliteModelState extends State<TfliteModel> {
             fontWeight: FontWeight.w700,
           ),
         ),
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Color(0xFF6F1D1B),
+          ),
+        ),
       ),
       body: const SizedBox(),
       floatingActionButton: Row(
