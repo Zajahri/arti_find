@@ -64,7 +64,7 @@ class About extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Montserrat',
-                    fontSize: 17.0,
+                    fontSize: 19.0,
                     height: 2,
                     fontWeight: FontWeight.w400,
                   ),
@@ -129,7 +129,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 19.0,
+                          fontSize: 22.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -145,7 +145,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 19.0,
+                          fontSize: 22.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -161,7 +161,7 @@ class About extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'Montserrat',
-                          fontSize: 19.0,
+                          fontSize: 22.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
