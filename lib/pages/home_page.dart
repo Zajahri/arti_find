@@ -8,6 +8,10 @@ import 'categories/education.dart';
 import 'categories/history.dart';
 import 'categories/innov.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
+
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -18,6 +22,15 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late final PageController pageController;
   int pageNo = 0;
+
+///////////////url/////////////////////
+  final Uri _uri = Uri(scheme: 'http', host: '192.168.1.137', port: 5173);
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_uri)) {
+      throw Exception('Could not launch $_uri');
+    }
+  }
+/////////////////url///////////////////////
 
   @override
   void initState() {
@@ -377,6 +390,7 @@ class _HomeState extends State<Home> {
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () {
+                        _launchUrl();
                         // Handle the book now button click
                       },
                       child: const Center(
