@@ -190,8 +190,8 @@ class TfliteModelState extends State<TfliteModel> {
             child: Column(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  width: MediaQuery.of(context).size.width * .9,
+                  height: MediaQuery.of(context).size.height * 0.20,
+                  width: MediaQuery.of(context).size.width * .8,
                   decoration: BoxDecoration(
                       color: Colors.red,
                       image: DecorationImage(
@@ -201,7 +201,7 @@ class TfliteModelState extends State<TfliteModel> {
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.15,
+                  height: MediaQuery.of(context).size.height * 0.30,
                   width: MediaQuery.of(context).size.width * .9,
                   child: ListView.builder(
                     itemCount: results.length,
