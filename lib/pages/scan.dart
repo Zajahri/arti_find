@@ -39,8 +39,8 @@ class ModelInfo {
 List<ModelInfo> models = [
   ModelInfo("0 Railway to Dagupan. Bayambang, Pangasinan", "Railway to Dagupan - Bayambang", "Railway to Dagupan. Bayambang, Pangasinan. 1907"),
   ModelInfo("1 Diploma", "Diploma", "A sample diploma issued by BHS (now BNHS) 1953"),
-  ModelInfo("2 Balintawak and alampay", "Balintawak and Alampay", "Balintawak, a native butterfly-sleeved blouse and accompanying Alampay (shawl) worn by Mrs. Manganaan during formal occasions." ),
-  ModelInfo("3 Woman of Hope", "Woman of Hope", "A story of a child/woman in search of her destiny to the world"),
+  ModelInfo("2 Balintawak and alampay", "Balintawak and Alampay\n\nDONATED BY: Mrs. Severa Ramos Gomez Manganaan", "Balintawak, a native butterfly-sleeved blouse and accompanying Alampay (shawl) worn by Mrs. Manganaan during formal occasions." ),
+  ModelInfo("3 Woman of Hope", "Woman of Hope\n\nARTIST: BENNY GILBERT M. FRIAS", "A story of a child/woman in search of her destiny to the world"),
   ModelInfo("4 Captured", "Captured", "A story of a productive woman whose heart was captured by unknown, still searching for freedom despite the loneliness of pursuing her dreams"),
   ModelInfo("5 Behind the Golden Smile", "Behind the Golden Smile", "A story of a woman who was a victim of violence, yet remains optimistic. This serves as a message of encouragement to stop violence against woman"),
   ModelInfo("6 Empowered Woman", "Empowered Woman", "A woman depicting empowerment and freedom through her body painting"),
