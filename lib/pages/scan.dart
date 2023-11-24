@@ -36,7 +36,7 @@ class ModelInfo {
   ModelInfo(this.label, this.title, this.description);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-List<ModelInfo> models = [
+List<ModelInfo> models = [ 
   ModelInfo("0 Railway to Dagupan. Bayambang, Pangasinan", "Railway to Dagupan - Bayambang", "Railway to Dagupan. Bayambang, Pangasinan. 1907"),
   ModelInfo("1 Diploma", "Diploma", "A sample diploma issued by BHS (now BNHS) 1953"),
   ModelInfo("2 Balintawak and alampay", "Balintawak and Alampay\n\nDONATED BY: Mrs. Severa Ramos Gomez Manganaan", "Balintawak, a native butterfly-sleeved blouse and accompanying Alampay (shawl) worn by Mrs. Manganaan during formal occasions." ),
@@ -83,7 +83,32 @@ List<ModelInfo> models = [
   ModelInfo("43 Balintawak and Tapis", "Balintawak and Tapis", "Balintawak was worn by Filipina women in the early half of the 20th century (c. 1930s) for picnics and outdoor activities. Tapis is a single, rectangular piece of cloth wrapped around the skirt."),
   ModelInfo("44 Corn Farming in Bayambang", "Corn Farming in Bayambang", "Bayambang's vast farmlands, if not planted with rice, are planted with corn. According to Artemio Buezon, former OIC of the Municipal Agriculture Office of the local government of Bayambang, it was in the 1980s under Mayor Calixto Camacho that Bayambang was dubbed as the 'cornbelt of Central Pangasinan'."),
   ModelInfo("45 Pogi", "Pogiiii", "Pinaka-pogi sa buong Solar System"),
-
+  ModelInfo("46 A teacher interprets poem to her class at BNHS", "A teacher interprets poem to her class at BNHS", "Description of"),
+  ModelInfo("47 Acacia trees at PSU Bayambang", "Acacia trees at PSU Bayambang", "Description of"),
+  ModelInfo("48 Alo", "Alo", "Description of"),
+  ModelInfo("49 Angklung", "Angklung", "Description of"),
+  ModelInfo("50 Barong", "Barong", "Description of"),
+  ModelInfo("51 BCS Grade 4 pupils", "BCS Grade 4 pupils", "Description of"),
+  ModelInfo("52 BNHS Class picture", "BNHS Class picture", "Description of"),
+  ModelInfo("53 Celebration at local high school", "Celebration at local high school", "Description of"),
+  ModelInfo("54 Coconut grater", "Coconut grater", "Description of"),
+  ModelInfo("55 Farmer hat", "Farmer hat", "Description of"),
+  ModelInfo("56 Gawad Urian, Urian Award", "Gawad Urian, Urian Award", "Description of"),
+  ModelInfo("57 Gitara", "Gitara", "Description of"),
+  ModelInfo("58 Grinder", "Grinder", "Description of"),
+  ModelInfo("59 Group of students pose in front of Old laboratory ", "Group of students pose in front of Old laboratory ", "Description of"),
+  ModelInfo("60 Hanging beam scale", "Hanging beam scale", "Description of"),
+  ModelInfo("61 Kimona", "Kimona", "Description of"),
+  ModelInfo("62 Colibangbang", "Colibangbang", "Description of"),
+  ModelInfo("63 Patadyong and baro", "Patadyong and baro", "Description of"),
+  ModelInfo("64 Philippine old money and coins", "Philippine old money and coins", "Description of"),
+  ModelInfo("65 PSU Bayambang's main building", "PSU Bayambang's main building", "Description ofm"),
+  ModelInfo("66 Ronaldo Tomas's Saxophone", "Ronaldo Tomas's Saxophone", "Description of"),
+  ModelInfo("67 Rondalla", "Rondalla", "Description of"),
+  ModelInfo("68 Rusty Lopez Brand", "Rusty Lopez Brand", "Description of"),
+  ModelInfo("69 Sled or galusa", "Sled or galusa", "Description of"),
+  ModelInfo("70 Talungating or marimba", "Talungating or marimba", "Description of"),
+  ModelInfo("71 The proper way to use Lasong tan Alo", "The proper way to use Lasong tan Alo", "Description of"),
   // Add more labels and descriptions here as needed
 ];
 
