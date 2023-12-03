@@ -70,10 +70,17 @@ class ResultPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const Scan()),
                       );
                     },
+<<<<<<< Updated upstream
                     icon: const FaIcon(
                       FontAwesomeIcons.times,
                       color: Colors.white,
                     ),
+=======
+                      icon: const FaIcon(
+                        FontAwesomeIcons.times,
+                        color: Colors.white,
+                      ),
+>>>>>>> Stashed changes
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).padding.top),
@@ -169,4 +176,8 @@ class ResultPage extends StatelessWidget {
     }
     return "Description not found";
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

@@ -4,13 +4,22 @@ import 'package:arti_find/pages/scan.dart';
 import 'package:arti_find/pages/history.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'pages/about_page.dart';
 
 class NavBar extends StatelessWidget {
   static final DateTime _pickedDate = DateTime.now();
 
-  const NavBar({super.key});
+  NavBar({super.key});
 
+  ///////////////url/////////////////////
+  final Uri _uri = Uri(scheme: 'http', host: '192.168.1.137', port: 5173);
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_uri)) {
+      throw Exception('Could not launch $_uri');
+    }
+  }
+/////////////////url///////////////////////
 
   @override
   Widget build(BuildContext context) {
@@ -99,13 +108,11 @@ class NavBar extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
-                  leading: const FaIcon(FontAwesomeIcons.comment, size: 20, color: Color(0xFF6F1D1B)),
-                  title: const Text('Feedback Form'),
+                  leading: const FaIcon(FontAwesomeIcons.calendarDays, size: 20, color: Color(0xFF6F1D1B)),
+                  title: const Text('Appointment'),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const FeedBack()),
-                    );
+                    _launchUrl();
+                    // Handle the book now button click
                   },
                 ),
               ),
@@ -154,3 +161,5 @@ class NavBar extends StatelessWidget {
         );
   }
 }
+
+

@@ -104,10 +104,13 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.circular(20.0),
                           child: SizedBox(
                             width: 380,
+                            height: 300,
                             child: Stack(
                               children: [
                                 Image.asset(
                                   'header/header${index + 1}.jpg',
+                                  width: double.infinity,
+                                  height: double.infinity,
                                   fit: BoxFit.cover,
                                 ),
                                 Container(
@@ -120,8 +123,7 @@ class _HomeState extends State<Home> {
                                     children: [
                                       if (index == 0)
                                         Positioned(
-                                          bottom: 150,
-                                          left: 5,
+                                          bottom: 70,
                                           child: Container(
                                             padding: const EdgeInsets.all(10.0),
                                             decoration: BoxDecoration(
@@ -129,31 +131,12 @@ class _HomeState extends State<Home> {
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              'Welcome to Bayambang\nMunicipal Museum:',
+                                              'Welcome to \n Bayambang Municipal \n Museum!',
                                               style: GoogleFonts.montserrat(
                                                 color: Color(0xFF6F1D1B),
-                                                fontSize: 26.0,
+                                                fontSize: 30.0,
                                                 fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (index == 0)
-                                        Positioned(
-                                          bottom: 45,
-                                          left: 20,
-                                          child: Container(
-                                            padding: const EdgeInsets.all(10.0),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
-                                              borderRadius: BorderRadius.circular(10.0),
-                                            ),
-                                            child: Text(
-                                              'Exploring the Past through\nImage Recognition',
-                                              style: GoogleFonts.montserrat(
-                                                color: Colors.white,
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.w600,
+                                                height: 2,
                                               ),
                                             ),
                                           ),
@@ -169,7 +152,7 @@ class _HomeState extends State<Home> {
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              "International Museum Day",
+                                              "",
                                               style: GoogleFonts.montserrat(
                                                 color: Colors.white,
                                                 fontSize: 22.0,
@@ -189,7 +172,7 @@ class _HomeState extends State<Home> {
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              'Every May 8',
+                                              '',
                                               style: GoogleFonts.montserrat(
                                                 color: Colors.white,
                                                 fontSize: 20.0,
@@ -209,7 +192,7 @@ class _HomeState extends State<Home> {
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              "National Museum Month",
+                                              "",
                                               style: GoogleFonts.montserrat(
                                                 color: Colors.white,
                                                 fontSize: 22.0,
@@ -229,7 +212,7 @@ class _HomeState extends State<Home> {
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              'Join us in October for National \nMuseum Month, a month-long \ncelebration.',
+                                              '',
                                               style: GoogleFonts.montserrat(
                                                 color: Colors.white,
                                                 fontSize: 20.0,

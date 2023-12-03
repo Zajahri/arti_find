@@ -2,6 +2,9 @@ import 'dart:developer';
 import 'dart:io';
 // import 'dart:typed_data';
 // import 'package:image/image.dart' as img;
+import 'package:arti_find/main.dart';
+import 'package:arti_find/pages/home_page.dart';
+import 'package:arti_find/pages/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
@@ -37,9 +40,12 @@ class ModelInfo {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< Updated upstream
 String benny = "Benny Gilbert M. Frias";
 String joseph = "Joseph B. Gumangan";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=======
+>>>>>>> Stashed changes
 List<ModelInfo> models = [
   ModelInfo("0 Railway to Dagupan. Bayambang, Pangasinan", "Railway to Dagupan - Bayambang", "Railway to Dagupan. Bayambang, Pangasinan. 1907"),
   ModelInfo("1 Diploma", "Diploma", "A sample diploma issued by BHS (now BNHS) 1953"),
@@ -152,7 +158,14 @@ class TfliteModelState extends State<TfliteModel> {
     final labelFile = await rootBundle.loadString('assets/labels.txt');
     labels = labelFile.split('\n');
   }
-
+  void showResultsInUI(File image, List results) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultPage(image: image, results: results, labels: [], models: [],),
+      ),
+    );
+  }
   Future imageClassification(File image) async {
     final List? recognitions = await Tflite.runModelOnImage(
       path: image.path,
@@ -173,7 +186,7 @@ class TfliteModelState extends State<TfliteModel> {
       log('$label - $description');
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    showMyDialog(image: image, results: results);
+    showResultsInUI(image, results);
   }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   String getDescriptionForLabel(String label) {
@@ -208,135 +221,11 @@ class TfliteModelState extends State<TfliteModel> {
   //   return convertedBytes.buffer.asUint8List();
   // }
 
-  Future<void> showMyDialog( {required File image, required List results}) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.20,
-                  width: MediaQuery.of(context).size.width * .8,
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      image: DecorationImage(
-                          fit: BoxFit.cover, image: FileImage(image))),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  width: MediaQuery.of(context).size.width * .9,
-                  child: ListView.builder(
-                    itemCount: results.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      String label = results[index]['label'];
-                      String description = getDescriptionForLabel(label);
-                      return Card(
-                        child: Container(
-                          margin: const EdgeInsets.all(10),
-                          child: Text(
-                            (results[index]['confidence']) >= 0.80
-                                ? "${description}"
-                                : "Error",
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 20),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                )
-              ],
-            ),
-          ),
 
-
-          actions: <Widget>[
-            Center(
-              child: Container(
-                width: 100, // Adjust the width as needed
-                decoration: BoxDecoration(
-                  color: Colors.blue, // Change the background color
-                  borderRadius: BorderRadius.circular(8.0), // Add rounded corners
-                ),
-                child: TextButton(
-                  child: const Text(
-                    'OK',
-                    style: TextStyle(
-                      color: Colors.white, // Change the text color
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pop(); // This will close the dialog
-                  },
-                ),
-              ),
-            ),
-          ],
-          // actions: <Widget>[
-          //   TextButton(
-          //     child: const Text('Approve'),
-          //     onPressed: () {
-          //       Navigator.of(context).pop();
-          //     },
-          //   ),
-          // ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFE9DBC7),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        title: const Text(
-          "Image Recognition",
-          style: TextStyle(
-            color: Color(0xFF6F1D1B),
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Color(0xFF6F1D1B),
-          ),
-        ),
-      ),
-      body: const SizedBox(),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            backgroundColor: Color(0xFF6F1D1B),
-            onPressed: pickImage,
-            tooltip: "Pick Image",
-            child: const Icon(Icons.image),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.1,
-          ),
-          FloatingActionButton(
-            backgroundColor: Color(0xFF6F1D1B),
-            onPressed: pickImageFromCamera,
-            tooltip: "Pick Image",
-            child: const Icon(Icons.camera_alt),
-          ),
-        ],
-      ),
-    );
+    return const FirstScreen();
   }
 
   Future pickImage() async {
@@ -364,5 +253,3 @@ class TfliteModelState extends State<TfliteModel> {
 
 
 /////////////////////////////////////////////////////////////////////////////
-
-

@@ -50,6 +50,7 @@ dependencies:
   image_picker: ^0.8.7+5
   flutter_tflite: ^1.0.1
   url_launcher: ^6.2.1
+  firebase_ml_model_downloader: ^0.2.4+5
 ##  firebase
 #  cloud_firestore: ^4.9.3
 #  firebase_core: ^2.17.0
@@ -91,7 +92,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    - assets/labels.txt
+    - assets/model.tflite
     - img/
     - header/
     - fonts/

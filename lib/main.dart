@@ -23,10 +23,9 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: const Color(0xFFE9DBC7),
-    drawer: const NavBar(),
+    drawer: NavBar(),
     appBar: AppBar(
       title: const Text(
-
         'MuBa',
         style: TextStyle(color: Color(0xFF6F1D1B), fontSize: 30, fontWeight: FontWeight.w700),
       ),
@@ -36,29 +35,13 @@ class _FirstScreenState extends State<FirstScreen> {
       iconTheme: const IconThemeData(color: Color(0xFF6F1D1B)),
     ),
     body: _screens[routeIndex],
-    bottomNavigationBar: BottomAppBar(
-      shape: const CircularNotchedRectangle(),
+    bottomNavigationBar: const BottomAppBar(
+      shape: CircularNotchedRectangle(),
       notchMargin: 8.0,
       child: SizedBox(
         height: 60.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () => _onItemTapped(0),
-              icon: Icon(Icons.home, color: routeIndex == 0 ? const Color(0xFF6F1D1B) : Colors.black),
-            ),
-            const SizedBox(width: 48.0),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const History()),
-                );
-              },
-              icon: Icon(Icons.history, color: routeIndex == 1 ? const Color(0xFF6F1D1B) : const Color(0xFF6F1D1B),
-            ),
-            ), ],
         ),
       ),
     ),
