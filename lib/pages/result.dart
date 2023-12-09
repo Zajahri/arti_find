@@ -27,8 +27,14 @@ class ResultPage extends StatelessWidget {
         children: [
           // Background image
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
@@ -38,8 +44,14 @@ class ResultPage extends StatelessWidget {
           ),
           // Blurred Opacity layer
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
               child: Container(
@@ -70,20 +82,16 @@ class ResultPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const Scan()),
                       );
                     },
-<<<<<<< Updated upstream
                     icon: const FaIcon(
                       FontAwesomeIcons.times,
                       color: Colors.white,
                     ),
-=======
-                      icon: const FaIcon(
-                        FontAwesomeIcons.times,
-                        color: Colors.white,
-                      ),
->>>>>>> Stashed changes
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).padding.top),
+                SizedBox(height: MediaQuery
+                    .of(context)
+                    .padding
+                    .top),
                 // Display the image output
                 Card(
                   color: Colors.transparent,
@@ -116,7 +124,8 @@ class ResultPage extends StatelessWidget {
                         color: Colors.transparent,
                         elevation: 0,
                         child: Container(
-                          margin: const EdgeInsets.only(left: 50, top: 20, right: 20, bottom: 20),
+                          margin: const EdgeInsets.only(
+                              left: 50, top: 20, right: 20, bottom: 20),
                           child: Text(
                             (results[index]['confidence']) >= 0.80
                                 ? description
@@ -168,7 +177,8 @@ class ResultPage extends StatelessWidget {
     for (int index = 0; index < labels.length; index++) {
       if (labels[index] == label) {
         if (index < models.length) {
-          return "Title: ${models[index].title}\nDescription: ${models[index].description} ";
+          return "Title: ${models[index].title}\nDescription: ${models[index]
+              .description} ";
         } else {
           return "Description not found";
         }
@@ -176,8 +186,4 @@ class ResultPage extends StatelessWidget {
     }
     return "Description not found";
   }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes

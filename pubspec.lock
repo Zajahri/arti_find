@@ -181,10 +181,10 @@ packages:
     dependency: transitive
     description:
       name: firebase_core
-      sha256: "471b46ea6a9af503184d4de691566887daedd312aec5baac5baa42d819f56446"
+      sha256: d301561d614487688d797717bef013a264c517d1d09e4c5c1325c3a64c835efb
       url: "https://pub.dev"
     source: hosted
-    version: "2.23.0"
+    version: "2.24.0"
   firebase_core_platform_interface:
     dependency: transitive
     description:
@@ -197,26 +197,26 @@ packages:
     dependency: transitive
     description:
       name: firebase_core_web
-      sha256: "0631a2ec971dbc540275e2fa00c3a8a2676f0a7adbc3c197d6fba569db689d97"
+      sha256: "10159d9ee42c79f4548971d92f3f0fcd5791f6738cda3583a4e3b2c8b244c018"
       url: "https://pub.dev"
     source: hosted
-    version: "2.8.1"
+    version: "2.9.0"
   firebase_ml_model_downloader:
     dependency: "direct main"
     description:
       name: firebase_ml_model_downloader
-      sha256: b67b4bad0243d19cccab839b61925dd3466f2bd0344c4ec3407c4962597c3a55
+      sha256: "43468a262716d28e6a2b0d73923c6a1787acd9a7f9c39c939a7c0f6172d101e4"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.4+5"
+    version: "0.2.4+6"
   firebase_ml_model_downloader_platform_interface:
     dependency: transitive
     description:
       name: firebase_ml_model_downloader_platform_interface
-      sha256: "632a640138f99f43995dde0ea649f5e40605d9f1ef146a2542ca5ba6aef055ab"
+      sha256: "1899704df9b5bb5b6d70d6e13bed2b8119be362ff7a15386985767981646da0d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.4+13"
+    version: "0.1.4+14"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -705,10 +705,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "7c99c0e1e2fa190b48d25c81ca5e42036d5cac81430ef249027d97b0935c553f"
+      sha256: b0f37db61ba2f2e9b7a78a1caece0052564d1bc70668156cf3a29d676fe4e574
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.0"
+    version: "5.1.1"
   xdg_directories:
     dependency: transitive
     description:
