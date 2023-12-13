@@ -1,5 +1,6 @@
 import 'package:arti_find/main.dart';
 import 'package:arti_find/pages/feedback_form.dart';
+import 'package:arti_find/pages/reminders.dart';
 import 'package:arti_find/pages/scan.dart';
 import 'package:arti_find/pages/history.dart';
 import 'package:flutter/material.dart';
@@ -77,21 +78,6 @@ class NavBar extends StatelessWidget {
                   },
                 ),
               ),
-        /*      Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: ListTile(
-                  leading: const FaIcon(FontAwesomeIcons.calendar, size: 20, color: Color(0xFF6F1D1B)),
-                  title: const Text('Reservation'),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Reservation(initialDate: _pickedDate ?? DateTime.now()),
-                      ),
-                    );
-                  },
-                ),
-              ),*/
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListTile(
@@ -113,6 +99,20 @@ class NavBar extends StatelessWidget {
                   onTap: () {
                     _launchUrl();
                     // Handle the book now button click
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: ListTile(
+                  leading: const FaIcon(FontAwesomeIcons.circleCheck, size: 20, color: Color(0xFF6F1D1B)),
+                  title: const Text('Reminders'),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Reminders(),
+                      ),
+                    );
                   },
                 ),
               ),

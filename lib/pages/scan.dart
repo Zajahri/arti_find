@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:ui';
 // import 'dart:typed_data';
 // import 'package:image/image.dart' as img;
+import 'package:arti_find/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
@@ -357,7 +358,7 @@ class TfliteModelState extends State<TfliteModel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return FirstScreen();
   }
 
   Future pickImage() async {

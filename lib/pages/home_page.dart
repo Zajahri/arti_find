@@ -1,13 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'categories/agri.dart';
 import 'categories/culture.dart';
 import 'categories/education.dart';
 import 'categories/history.dart';
 import 'categories/innov.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -123,7 +121,7 @@ class _HomeState extends State<Home> {
                                     children: [
                                       if (index == 0)
                                         Positioned(
-                                          bottom: 70,
+                                          bottom: 60,
                                           child: Container(
                                             padding: const EdgeInsets.all(10.0),
                                             decoration: BoxDecoration(
@@ -134,7 +132,7 @@ class _HomeState extends State<Home> {
                                               'Welcome to \n Bayambang Municipal \n Museum!',
                                               style: GoogleFonts.montserrat(
                                                 color: Color(0xFF6F1D1B),
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontWeight: FontWeight.bold,
                                                 height: 2,
                                               ),
@@ -143,76 +141,36 @@ class _HomeState extends State<Home> {
                                         ),
                                       if (index == 1)
                                         Positioned(
-                                          bottom: 150,
-                                          left: 2,
-                                          child: Container(
-                                            padding: const EdgeInsets.all(10.0),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
-                                              borderRadius: BorderRadius.circular(10.0),
-                                            ),
-                                            child: Text(
-                                              "",
-                                              style: GoogleFonts.montserrat(
-                                                color: Colors.white,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (index == 1)
-                                        Positioned(
-                                          bottom: 75,
-                                          left: 10,
-                                          child: Container(
-                                            padding: const EdgeInsets.all(10.0),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
-                                              borderRadius: BorderRadius.circular(10.0),
-                                            ),
-                                            child: Text(
-                                              '',
-                                              style: GoogleFonts.montserrat(
-                                                color: Colors.white,
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (index == 2)
-                                        Positioned(
-                                          bottom: 178,
-                                          left: 2,
-                                          child: Container(
-                                            padding: const EdgeInsets.all(10.0),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
-                                              borderRadius: BorderRadius.circular(10.0),
-                                            ),
-                                            child: Text(
-                                              "",
-                                              style: GoogleFonts.montserrat(
-                                                color: Colors.white,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (index == 2)
-                                        Positioned(
                                           bottom: 50,
-                                          left: 10,
+                                          left: 2,
                                           child: Container(
                                             padding: const EdgeInsets.all(10.0),
                                             decoration: BoxDecoration(
-                                              color: Color(0xFF6F1D1B).withOpacity(0.4),
+                                              color: Color(0xFF6F1D1B).withOpacity(0.3),
                                               borderRadius: BorderRadius.circular(10.0),
                                             ),
                                             child: Text(
-                                              '',
+                                              "Plan your visit \n for a great experience!",
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.white,
+                                                fontSize: 22.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (index == 2)
+                                        Positioned(
+                                          bottom: 78,
+                                          left: 2,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10.0),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF6F1D1B).withOpacity(0.3),
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
+                                            child: Text(
+                                              "Explore art and history \n with our Image Recognition!",
                                               style: GoogleFonts.montserrat(
                                                 color: Colors.white,
                                                 fontSize: 20.0,
