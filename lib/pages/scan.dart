@@ -116,7 +116,18 @@ List<ModelInfo> models = [
   ModelInfo("69 Sled or galusa", "Sled or galusa", "The galusa is used to maneuver tools, supplies, and harvest in t he muddy rice fields. The farmer deviced the galusan as an all-purposed utility sled, typically made of wood and bamboo"),
   ModelInfo("70 Talungating or marimba", "Talungating or marimba", "The marimba is a musical instrument in the percussion family that consists of wooden bars that are struck by mallets. Below each bar is a resonator pipe that amplifies particular harmonics of its sound"),
   ModelInfo("71 The proper way to use Lasong tan Alo", "The proper way to use Lasong tan Alo", "A woman who uses lasong and alo in a proper way"),
-
+  ModelInfo("72 Camesa de Chino_2", "Camesa de Chino", "A camesa de chino, also known as a Chinese collarless shirt, is a traditional Filipino garment that is typically worn as an undershirt for the barong Tagalog, the national dress of the Philippines."),
+  ModelInfo("73 Maria Clara Dress_2", "Maria Clara Dress", "is the national costome of Filipino women. Considered a mestiza dress. It is an ensemble of indigenous and Spanish influence and was popular during the spanish era since 1890."),
+  ModelInfo("74 Maria Clara Dress_3", "Maria Clara Dress", "is the national costome of Filipino women. Considered a mestiza dress. It is an ensemble of indigenous and Spanish influence and was popular during the spanish era since 1890."),
+  ModelInfo("75 Grand Winner", "Grand Winner(No Title)\n\nARTIST: Nicole Joi B. Gasmen", "Grand Winner, Tourism Month Celebration 2023"),
+  ModelInfo("76 1st Runner Up", "1st Runner Up(No Title)\n\nARTIST: Mark Delos Santos", "1st Runner Up, Tourism Month Celebration 2023"),
+  ModelInfo("77 2nd Runner Up", "2nd Runner Up(No Title)\n\nARTIST: Geisha Althea De Leon", "2nd Runner Up, Tourism Month Celebration 2023"),
+  ModelInfo("78 Unknown_1", "Unknown_1(No Title)", "Participant, Tourism Month Celebration 2023"),
+  ModelInfo("79 Unknown_2", "Unknown_2(No Title)", "Participant, Tourism Month Celebration 2023"),
+  ModelInfo("80 Unknown_3", "Unknown_3(No Title)", "Participant, Tourism Month Celebration 2023"),
+  ModelInfo("81 Unknown_4", "Unknown_4(No Title)", "Participant, Tourism Month Celebration 2023"),
+  ModelInfo("82 Unknown_5", "Unknown_5(No Title)", "Participant, Tourism Month Celebration 2023"),
+  ModelInfo("83 Camesa de Chino_3", "Camesa de Chino", "A camesa de chino, also known as a Chinese collarless shirt, is a traditional Filipino garment that is typically worn as an undershirt for the barong Tagalog, the national dress of the Philippines."),
 
 
   // Add more labels and descriptions here as needed
@@ -131,6 +142,7 @@ class TfliteModel extends StatefulWidget {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class TfliteModelState extends State<TfliteModel> {
+  bool showErrorOnce = false;
   late File image;
   late List results;
   bool imageSelect = false;
@@ -199,24 +211,7 @@ class TfliteModelState extends State<TfliteModel> {
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  // Uint8List imageToByteListFloat32(
-  //     img.Image image, int inputSize, double mean, double std) {
-  //   var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
-  //   var buffer = Float32List.view(convertedBytes.buffer);
-  //   int pixelIndex = 0;
-  //   for (var i = 0; i < inputSize; i++) {
-  //     for (var j = 0; j < inputSize; j++) {
-  //       var pixel = image.getPixel(j, i);
-  //       buffer[pixelIndex++] = (img.getRed(pixel) - mean) / std;
-  //       buffer[pixelIndex++] = (img.getGreen(pixel) - mean) / std;
-  //       buffer[pixelIndex++] = (img.getBlue(pixel) - mean) / std;
-  //     }
-  //   }
-  //   return convertedBytes.buffer.asUint8List();
-  // }
-
   Future<void> showMyDialog( {required File image, required List results}) async {
-
     return showDialog<void>(
         context: context,
         barrierDismissible: false,
@@ -299,57 +294,52 @@ class TfliteModelState extends State<TfliteModel> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Expanded(
                         child: ListView.builder(
                           itemCount: results.length,
                           itemBuilder: (BuildContext context, int index) {
                             String label = results[index]['label'];
                             String description = getDescriptionForLabel(label);
-                            return Card(
-                              color: Colors.transparent,
-                              elevation: 0,
-                              child: Container(
-                                margin: const EdgeInsets.only(left: 50, top: 20, right: 20, bottom: 20),
-                                child: Text(
-                                  (results[index]['confidence']) >= 0.80
-                                      ? description
-                                      : "Error",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                            if (!showErrorOnce && (results[index]['confidence']) < 0.80) {
+                              showErrorOnce = true;
+                              return Card(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                child: Container(
+                                  margin: const EdgeInsets.only(left: 50, top: 20, right: 20, bottom: 20),
+                                  child: const Text(
+                                    "Error, Please try again",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
+                              );
+                            } else if (results[index]['confidence'] >= 0.80) {
+                              return Card(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                child: Container(
+                                  margin: const EdgeInsets.only(left: 50, top: 20, right: 20, bottom: 20),
+                                  child: Text(
+                                    (results[index]['confidence']) >= 0.80
+                                        ? description:'', // Display empty string if the error message has already been shown
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            } else {
+                              return const SizedBox(); // Don't display anything if confidence is low and error already shown
+                            }
+
                           },
                         ),
                       ),
-                      // Okay Button
-                      /*        Container(
-                  margin: EdgeInsets.all(20),
-                  width: 100,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF6F1D1B),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: TextButton(
-                    child: const Text(
-                      'Okay',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => const Scan()),
-                      );
-                    },
-                  ),
-                ),
-
-         */
                     ],
                   ),
                 ),
@@ -390,5 +380,4 @@ class TfliteModelState extends State<TfliteModel> {
 
 
 /////////////////////////////////////////////////////////////////////////////
-
 
