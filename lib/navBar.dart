@@ -66,7 +66,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 7),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.house, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Home'),
@@ -79,7 +79,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.expand, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Scan'),
@@ -103,7 +103,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.circleCheck, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Reminders'),
