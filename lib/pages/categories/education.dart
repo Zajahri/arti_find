@@ -32,7 +32,7 @@ class EducationPage extends StatelessWidget {
           children: [
             Image.asset(
               'img/educ.png',
-              width: 360,
+              width: 400,
               height: 300,
             ),
             Container(

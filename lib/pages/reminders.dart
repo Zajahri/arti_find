@@ -45,6 +45,7 @@ class Reminders extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5.0),
               child: RichText(
+                textAlign: TextAlign.justify,
                 text: const TextSpan(
                   style: TextStyle(
                     color: Colors.black,
@@ -67,6 +68,7 @@ class Reminders extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5.0),
               child: RichText(
+                textAlign: TextAlign.justify,
                 text: const TextSpan(
                   style: TextStyle(
                     color: Colors.black,
@@ -82,6 +84,29 @@ class Reminders extends StatelessWidget {
                     ),
                     TextSpan(
                         text: 'Prohibited: sandals, sleeveless clothes, short skirts, jersey shorts.'),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 5),
+            Container(
+              padding: const EdgeInsets.all(5.0),
+              child: RichText(
+                text: const TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Montserrat',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  children: [
+                    TextSpan(text: '3. '),
+                    TextSpan(
+                      text: ' Do not bring food and drinks ',
+                      style: TextStyle(color: Colors.red, fontWeight: FontWeight.w700),
+                    ),
+                    TextSpan(
+                        text: 'inside the building.'),
                   ],
                 ),
                 textAlign: TextAlign.justify,

@@ -1,8 +1,7 @@
 import 'package:arti_find/main.dart';
-import 'package:arti_find/pages/feedback_form.dart';
 import 'package:arti_find/pages/reminders.dart';
 import 'package:arti_find/pages/scan.dart';
-import 'package:arti_find/pages/history.dart';
+import 'package:arti_find/pages/route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -103,7 +102,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 9),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.circleCheck, size: 20, color: Color(0xFF6F1D1B)),
                   title: const Text('Reminders'),
@@ -116,8 +115,21 @@ class NavBar extends StatelessWidget {
                   },
                 ),
               ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: ListTile(
+                leading: const FaIcon(FontAwesomeIcons.map, size: 20, color: Color(0xFF6F1D1B),),
+                title: const Text('Route'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Floor()),
+                  );
+                },
+              ),
+            ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 9.5),
                 child: ListTile(
                   leading: const FaIcon(FontAwesomeIcons.infoCircle, size: 20, color: Color(0xFF6F1D1B),),
                   title: const Text('About'),
